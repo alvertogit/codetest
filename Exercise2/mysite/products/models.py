@@ -6,6 +6,7 @@ from django.db import models
 # Create your models here.
 
 class Product(models.Model):
+    # Only the most relevant fields from test.xml have been chosen
     product_id = models.CharField(max_length=10)
     title = models.CharField(max_length=100)
     product_type = models.CharField(max_length=100)

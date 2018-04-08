@@ -24,6 +24,9 @@ def translate (intValue):
     Returns:
         str: The return value with commas.
 
+    Raises:
+        ValueError: If intValue is not an integer.
+
     """
 
     try:
