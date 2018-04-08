@@ -41,6 +41,15 @@ u"123,456,789"
 
 • Input/output methods doesn’t matter.
 
+## EXERCISE 1 FOLDER CONTENT
+
+The exercise 1 folder contains three files:
+* **function.py**: It contents translate function code.
+
+* **main.py**: It is used to test translate function.
+
+* **Exercise1.ipynb**: Jupyter nootebook to test translate function.
+
 ## HOW TO RUN EXERCISE 1
 
 The way to to run exercise 1 is simple. Just go to Exercise1 folder and execute:
@@ -75,6 +84,13 @@ Write a small app that publish an API Rest with these endpoints:
 • Use Python as programming language (Django framework preferred).
 
 • Don’t waste time in how consume the API or in the authentication. If it can be tested with Curl or Requests, is totally valid.
+
+## EXERCISE 2 FOLDER CONTENT
+
+The exercise 2 folder contains two folders:
+* **mysite**: It stores Django's **products** app code.
+
+* **importer_xml_postgresql**: It stores the **test.xml** with data to be inserted into postgresql and the **importer** app to do this process.
 
 ## HOW TO RUN EXERCISE 2
 
