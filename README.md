@@ -166,8 +166,144 @@ The description of the URLs that are above:
 
 * "price" URL: Gets 20 products ordered by price.
 
+```
+HTTP 200 OK
+Allow: GET, POST, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
+[
+    {
+        "product_id": "AF5TW2",
+        "title": "Maxi-Cosi - AxissFix Autostol (61-105 cm)",
+        "product_type": "Car Seats > Child car seats > Child benefit",
+        "price": "3299.00",
+        "custom_label_0": "3135.00"
+    },
+    {
+        "product_id": "AN3WT9",
+        "title": "Maxi-Cosi - AxissFix Autostol (61-105 cm)",
+        "product_type": "Car Seats > Child car seats > Child benefit",
+        "price": "3299.00",
+        "custom_label_0": "3135.00"
+    },
+    ...
+    ...
+    ...
+    {
+        "product_id": "AG286U",
+        "title": "Maxi-Cosi - Citi Autostol (0-13 kg)",
+        "product_type": "Car Seats > Child car seats > Child benefit",
+        "price": "890.00",
+        "custom_label_0": "846.00"
+    }
+]
+```
+
 * "discount" URL: Gets 20 products ordered by discount (price - custom_label_0).
+
+```
+HTTP 200 OK
+Allow: GET, POST, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
+[
+    {
+        "product_id": "AF84CU",
+        "title": "Sisley - Daily Line Reducer 30 ml",
+        "product_type": "Skincare > Face > Oils & Serums",
+        "price": "2399.00",
+        "custom_label_0": "2199.00"
+    },
+    {
+        "product_id": "AD529V",
+        "title": "Maxi-Cosi - AxissFix Autostol (61-105 cm)",
+        "product_type": "Car Seats > Child car seats > Child benefit",
+        "price": "3299.00",
+        "custom_label_0": "3135.00"
+    },
+    ...
+    ...
+    ...
+    {
+        "product_id": "AJ79SB",
+        "title": "Escentric Molecules - Escentric 04 EDT 100 ml",
+        "product_type": "Perfume > Eau de Toilette",
+        "price": "679.00",
+        "custom_label_0": "612.00"
+    }
+]
+```
 
 * "mostdiscounted" URL: Gets the most discounted 20 products.
 
+```
+HTTP 200 OK
+Allow: GET, POST, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
+[
+    {
+        "product_id": "AJ43CN",
+        "title": "Grusomme mig 2 - DVD",
+        "product_type": "Movies > DVD > Standard > Adventure > 7",
+        "price": "69.00",
+        "custom_label_0": "29.00"
+    },
+    {
+        "product_id": "AF75JP",
+        "title": "Marley & Me - DVD",
+        "product_type": "Movies > DVD > Standard > Comedy > Owen Wilson > 7",
+        "price": "69.00",
+        "custom_label_0": "29.00"
+    },
+    ...
+    ...
+    ...
+    {
+        "product_id": "AC8M7R",
+        "title": "Melton - Numbers Rib Drenge Boxershorts 2 pk",
+        "product_type": "Apparel & Accessories > Clothing",
+        "price": "99.00",
+        "custom_label_0": "59.00"
+    }
+]
+```
+
 * "typecomedy" URL: Gets all products under “Comedy” product type.
+
+```
+HTTP 200 OK
+Allow: GET, POST, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
+[
+    {
+        "product_id": "AK628C",
+        "title": "Men in Black 3 (3D Blu-Ray)",
+        "product_type": "Movies > 3D Blu-Ray > Standard > Comedy > Will Smith",
+        "price": "109.00",
+        "custom_label_0": "79.00"
+    },
+    {
+        "product_id": "AC39B4",
+        "title": "Men in Black 3 (4K Blu-Ray)",
+        "product_type": "Movies > 4K Blu-Ray > Standard > Comedy > Will Smith",
+        "price": "269.00",
+        "custom_label_0": "229.00"
+    },
+    ...
+    ...
+    ...
+    {
+        "product_id": "AF52KX",
+        "title": "Glee: Hele Sæson 5 (6-disc) - DVD",
+        "product_type": "TV Series > DVD > Complete Edition > Comedy > Lea Michele > 15",
+        "price": "109.00",
+        "custom_label_0": "69.00"
+    }
+]
+```
