@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 
 '''
-function.py: It contents translate function.
+function.py: It contents translate functions solutions to Exercise 1.
 '''
 
 __author__      = "alvertogit"
 __copyright__   = "Copyright 2018"
 
 import sys
+import re
 
 def translate (intValue):
     """Function translate takes an integer and return a string representation of 
@@ -52,4 +53,41 @@ def translate (intValue):
         if((totLen-1-i)%groupSize == 0 and i != totLen-1):
             result = result+','
             
+    return result
+
+def translate_regex (intValue):
+    """Function translate takes an integer and return a string representation of 
+    that integer with commas separating groups of 3 digits using regular expression.
+    For example:
+
+    print translate_regex (1234)
+    u"1,234"
+    print translate_regex (123456789)
+    u"123,456,789"
+
+    Args:
+        intValue (int): The integer parameter to be translated.
+
+    Returns:
+        str: The return value with commas.
+    
+    Raises:
+        ValueError: If intValue is not an integer.
+        
+    """
+
+    try:
+        val = int(intValue)
+    except ValueError:
+        print "Error: Input is not an integer"
+        sys.exit(1)
+    
+    # integer input is transformed into string
+    strValue = str(intValue)
+    # string result with commas to be returned
+    result = u''
+    
+    # comma is added between groups of 3 digits except at the end using regex
+    result = re.sub(r'(?<=\d)(?=(\d\d\d)+(?!\d))', ',', strValue)
+    
     return result

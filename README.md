@@ -44,9 +44,9 @@ u"123,456,789"
 ## EXERCISE 1 FOLDER CONTENT
 
 The exercise 1 folder contains three files:
-* **function.py**: It contents translate function code.
+* **function.py**: It contents translate functions code for Exercise 1 including one solution with regular expression.
 
-* **main.py**: It is used to test translate function.
+* **main.py**: It is used to test translate functions.
 
 * **Exercise1.ipynb**: Jupyter nootebook to test translate function.
 
@@ -58,7 +58,7 @@ The way to to run exercise 1 is simple. Just go to Exercise1 folder and execute:
 ~/codetest/Exercise1$ python main.py
 ```
 
-A fast and easy way to play with the **translate** function is through a Jupyter notebook. One is stored in the same **Exercise1** folder, to run it use the command shown below:
+A fast and easy way to play with the **translate** and **translate_regex** functions is through a Jupyter notebook. One notebook is stored in the same **Exercise1** folder, to run it use the command shown below:
 
 ```bash
 ~/codetest/Exercise1$ jupyter notebook Exercise1.ipynb
@@ -112,7 +112,7 @@ postgres=# \du
 postgres=# \l
 ```
 
-The next step consists in execute the following commands to prepare the Django app **products**.
+The next step consists in executing the following commands to prepare the Django's **products** app.
 
 ```bash
 ~/codetest/Exercise2/mysite$ python manage.py migrate
@@ -136,6 +136,8 @@ Once the table **products_product** has been created with the previous command i
 ~/codetest/Exercise2/importer_xml_postgresql$ python importer.py
 ```
 
+Now it is possible to launch the server with Django's **products** app.
+
 ```bash
 ~/codetest/Exercise2/mysite$ python manage.py runserver
 ```
@@ -146,7 +148,7 @@ There are different ways to check that the server is running properly. One is op
 http://127.0.0.1:8000/products/
 ```
 
-In the web browser should show something similar to:
+The web browser should show something similar to:
 
 ```
 HTTP 200 OK
