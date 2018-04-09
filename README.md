@@ -96,7 +96,15 @@ The exercise 2 folder contains two folders:
 
 As first step to be able to run exercise 2 is mandatory to create in postgresql an user called *'codetest'* with password *'codetest'* and a database *'codetest'*.
 
-In **psql** it can be done using the following commands:
+The user and the databa can be created with the following commands from shell.
+
+ ```bash
+$ sudo -u postgres bash -c "psql -c \"CREATE USER codetest WITH PASSWORD 'codetest';\""
+$ sudo -u postgres bash -c "psql -c \"ALTER USER codetest WITH SUPERUSER;\""
+$ sudo -u postgres bash -c "psql -c \"CREATE DATABASE codetest WITH OWNER codetest;\""
+```
+
+Which is similar to login in **psql** and do it using the following commands:
 
 ```bash
 postgres=# ALTER USER codetest PASSWORD 'codetest';
@@ -104,12 +112,27 @@ postgres=# ALTER USER codetest PASSWORD 'codetest';
 postgres=# CREATE DATABASE codetest WITH OWNER codetest;
 ```
 
-To check the creation of both it is possible to use the following commands:
+To check the creation of both it is possible to use the following commands in **psql**:
 
 ```bash
 postgres=# \du
 ...
 postgres=# \l
+```
+
+To import the database codetest containing the table **products_product** with all products to postgresql it is necessary to execute:
+
+```bash
+~/codetest/Exercise2/importer_xml_postgresql$ cp codetest.sql /tmp
+~/codetest/Exercise2/importer_xml_postgresql$ sudo -u postgres psql codetest < '/tmp/codetest.sql'
+```
+
+The **codetest.sql** file was created after running the importer to insert data from **test.xml** file to postgresql **products_product** table.
+
+```bash
+~/codetest/Exercise2/mysite$ cd ..
+~/codetest/Exercise2/$ cd importer_xml_postgresql
+~/codetest/Exercise2/importer_xml_postgresql$ python importer.py
 ```
 
 The next step consists in executing the following commands to prepare the Django's **products** app.
@@ -126,14 +149,6 @@ BEGIN;
 --
 CREATE TABLE "products_product" ("id" serial NOT NULL PRIMARY KEY, "product_id" varchar(10) NOT NULL, "title" varchar(100) NOT NULL, "product_type" varchar(100) NOT NULL, "price" numeric(6, 2) NOT NULL, "custom_label_0" numeric(6, 2) NOT NULL);
 COMMIT;
-```
-
-Once the table **products_product** has been created with the previous command it is possible to run the importer to insert data from **test.xml** file to postgresql table.
-
-```bash
-~/codetest/Exercise2/mysite$ cd ..
-~/codetest/Exercise2/$ cd importer_xml_postgresql
-~/codetest/Exercise2/importer_xml_postgresql$ python importer.py
 ```
 
 Now it is possible to launch the server with Django's **products** app.
