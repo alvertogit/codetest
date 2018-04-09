@@ -1,6 +1,6 @@
 # CODE TEST
 
-This repository stores a code test compose of two exercises to demonstrate skills mainly with Python, Django and Postgresql.
+This repository stores a code test compose of two exercises to demonstrate skills mainly with Python, Django, Postgresql and Docker.
 
 ## DEPENDENCIES
 The code has been tested using:
@@ -8,6 +8,8 @@ The code has been tested using:
 * Python (2.7.14)
 * Django (1.11.12)
 * PostgreSQL (9.5.12)
+* Docker (18.03.0-ce)
+* Docker-Compose (1.8)
 * Conda (4.4.11) virtual environment (<env_name>=codetest27)
 
 Virtual environment can be generated with **codetest27.yaml**, **requirements.txt** files found in main folder.
@@ -138,7 +140,7 @@ The **codetest.sql** file was created after running the importer to insert data 
 Now it is possible to launch the server with Django's **products** app.
 
 ```bash
-~/codetest/Exercise2/mysite$ python manage.py runserver
+~/codetest/Exercise2/mysite$ python manage.py runserver 8000
 ```
 
 There are different ways to check that the server is running properly. One is opening a web browser such as Chrome or Mozilla and paste the following URL:
@@ -334,10 +336,10 @@ Before executing docker-compose commands local postgresql database service must 
 ~/codetest2/Exercise2$ sudo service postgresql stop
 ```
 
-Then the docker-compose can be execute to build services.
+Then docker-compose can be execute to build services.
 
 ```bash
-~/codetest2/Exercise2$ sudo docker-compose build web
+~/codetest2/Exercise2$ sudo docker-compose build
 ```
 
 Next step consists in executing docker-compose up command.
