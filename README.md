@@ -90,9 +90,9 @@ Write a small app that publish an API Rest with these endpoints:
 The exercise 2 folder contains two folders:
 * **mysite**: It stores Django's **products** app code.
 
-* **importer_xml_postgresql**: It stores the **test.xml** with data to be inserted into postgresql and the **importer** app to do this process.
+* **postgresql**: It stores the **test.xml** with data to be inserted into postgresql and the **importer** app to do this process.
 
-## HOW TO RUN EXERCISE 2
+## HOW TO RUN EXERCISE 2 **WITHOUT DOCKER COMPOSE**
 
 As first step to be able to run exercise 2 is mandatory to create in postgresql an user called *'codetest'* with password *'codetest'* and a database *'codetest'*.
 
@@ -308,3 +308,73 @@ Vary: Accept
     }
 ]
 ```
+
+## HOW TO RUN EXERCISE 2 **WITH DOCKER COMPOSE**
+
+The steps and commands to run exercise 2 with **docker-compose** are described below.
+
+First **settings.py** file has to be modified. **HOST** value of **DATABASE** must be changed to **'postgres_db'**:
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'codetest',
+        'USER': 'codetest',
+        'PASSWORD': 'codetest',
+        'HOST': 'postgres_db',
+        'PORT': '5432',
+    }
+}
+```
+
+Before executing docker-compose commands local postgresql database service must be stopped.
+
+```bash
+~/codetest2/Exercise2$ sudo service postgresql stop
+```
+
+Then the docker-compose can be execute to build services.
+
+```bash
+~/codetest2/Exercise2$ sudo docker-compose build web
+```
+
+Next step consists in executing docker-compose up command.
+
+```bash
+~/codetest2/Exercise2$ sudo docker-compose up
+```
+
+It is possible that for the first time the command keeps stopped at one point as shown below: 
+
+```bash
+...
+...
+postgres_db_1  | LOG:  database system was shut down at 2018-04-09 18:57:18 UTC
+postgres_db_1  | LOG:  MultiXact member wraparound protections are now enabled
+postgres_db_1  | LOG:  database system is ready to accept connections
+postgres_db_1  | LOG:  autovacuum launcher started
+```
+
+If this happens simply press 'Control+C', wait patienly to return to shell and repeat again the same command. If everything goes fine at the end it should appear something similar to:
+
+```bash
+...
+...
+web_1          | Performing system checks...
+web_1          | 
+web_1          | System check identified no issues (0 silenced).
+web_1          | April 09, 2018 - 18:57:36
+web_1          | Django version 1.11.12, using settings 'mysite.settings'
+web_1          | Starting development server at http://0.0.0.0:8000/
+web_1          | Quit the server with CONTROL-C.
+
+```
+
+Now it is possible to open a web browser and paste the URL as described in the previous paragraph to check that the server is running fine.
+
+```
+http://127.0.0.1:8000/products/
+```
+
