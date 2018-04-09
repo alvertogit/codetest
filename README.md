@@ -104,20 +104,20 @@ $ sudo -u postgres bash -c "psql -c \"ALTER USER codetest WITH SUPERUSER;\""
 $ sudo -u postgres bash -c "psql -c \"CREATE DATABASE codetest WITH OWNER codetest;\""
 ```
 
-Which is similar to login in **psql** and do it using the following commands:
+The next step consists in executing the following commands to prepare the Django's **products** app.
 
 ```bash
-postgres=# ALTER USER codetest PASSWORD 'codetest';
+~/codetest/Exercise2/mysite$ python manage.py migrate
 ...
-postgres=# CREATE DATABASE codetest WITH OWNER codetest;
-```
-
-To check the creation of both it is possible to use the following commands in **psql**:
-
-```bash
-postgres=# \du
+~/codetest/Exercise2/mysite$ python manage.py makemigrations products
 ...
-postgres=# \l
+~/codetest/Exercise2/mysite$ python manage.py sqlmigrate products 0001
+BEGIN;
+--
+-- Create model Product
+--
+CREATE TABLE "products_product" ("id" serial NOT NULL PRIMARY KEY, "product_id" varchar(10) NOT NULL, "title" varchar(100) NOT NULL, "product_type" varchar(100) NOT NULL, "price" numeric(6, 2) NOT NULL, "custom_label_0" numeric(6, 2) NOT NULL);
+COMMIT;
 ```
 
 To import the database codetest containing the table **products_product** with all products to postgresql it is necessary to execute:
@@ -133,22 +133,8 @@ The **codetest.sql** file was created after running the importer to insert data 
 ~/codetest/Exercise2/mysite$ cd ..
 ~/codetest/Exercise2/$ cd importer_xml_postgresql
 ~/codetest/Exercise2/importer_xml_postgresql$ python importer.py
-```
-
-The next step consists in executing the following commands to prepare the Django's **products** app.
-
-```bash
-~/codetest/Exercise2/mysite$ python manage.py migrate
-...
-~/codetest/Exercise2/mysite$ python manage.py makemigrations products
-...
-~/codetest/Exercise2/mysite$ python manage.py sqlmigrate products 0001
-BEGIN;
---
--- Create model Product
---
-CREATE TABLE "products_product" ("id" serial NOT NULL PRIMARY KEY, "product_id" varchar(10) NOT NULL, "title" varchar(100) NOT NULL, "product_type" varchar(100) NOT NULL, "price" numeric(6, 2) NOT NULL, "custom_label_0" numeric(6, 2) NOT NULL);
-COMMIT;
+~/codetest/Exercise2/importer_xml_postgresql$ pg_dump -U postgres codetest > /tmp/codetest.sql
+~/codetest/Exercise2/importer_xml_postgresql$ cp /tmp/codetest.sql codetest.sql
 ```
 
 Now it is possible to launch the server with Django's **products** app.
