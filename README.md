@@ -120,7 +120,7 @@ CREATE TABLE "products_product" ("id" serial NOT NULL PRIMARY KEY, "product_id" 
 COMMIT;
 ```
 
-To import the database codetest containing the table **products_product** with all products to postgresql it is necessary to execute:
+To import the database **codetest.sql** file containing the table **products_product** with all products to postgresql it is necessary to execute:
 
 ```bash
 ~/codetest/Exercise2/importer_xml_postgresql$ cp codetest.sql /tmp
@@ -130,8 +130,6 @@ To import the database codetest containing the table **products_product** with a
 The **codetest.sql** file was created after running the importer to insert data from **test.xml** file to postgresql **products_product** table.
 
 ```bash
-~/codetest/Exercise2/mysite$ cd ..
-~/codetest/Exercise2/$ cd importer_xml_postgresql
 ~/codetest/Exercise2/importer_xml_postgresql$ python importer.py
 ~/codetest/Exercise2/importer_xml_postgresql$ pg_dump -U postgres codetest > /tmp/codetest.sql
 ~/codetest/Exercise2/importer_xml_postgresql$ cp /tmp/codetest.sql codetest.sql

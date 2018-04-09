@@ -41,6 +41,9 @@ if __name__ == '__main__':
     # Open a cursor to perform database operations
     cur = conn.cursor()
 
+    # Create products_product table
+    cur.execute("CREATE TABLE products_product (id serial NOT NULL PRIMARY KEY, product_id varchar(10) NOT NULL, title varchar(100) NOT NULL, product_type varchar(100) NOT NULL, price numeric(6, 2) NOT NULL, custom_label_0 numeric(6, 2) NOT NULL);")
+
     ns={'base' : 'http://base.google.com/ns/1.0'}
 
     tree = ET.parse('test.xml')
