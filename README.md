@@ -123,16 +123,16 @@ COMMIT;
 To import the database **codetest.sql** file containing the table **products_product** with all products to postgresql it is necessary to execute:
 
 ```bash
-~/codetest/Exercise2/importer_xml_postgresql$ cp codetest.sql /tmp
-~/codetest/Exercise2/importer_xml_postgresql$ sudo -u postgres psql codetest < '/tmp/codetest.sql'
+~/codetest/Exercise2/postgresql$ cp codetest.sql /tmp
+~/codetest/Exercise2/postgresql$ sudo -u postgres psql codetest < '/tmp/codetest.sql'
 ```
 
 The **codetest.sql** file was created after running the importer to insert data from **test.xml** file to postgresql **products_product** table.
 
 ```bash
-~/codetest/Exercise2/importer_xml_postgresql$ python importer.py
-~/codetest/Exercise2/importer_xml_postgresql$ pg_dump -U postgres codetest > /tmp/codetest.sql
-~/codetest/Exercise2/importer_xml_postgresql$ cp /tmp/codetest.sql codetest.sql
+~/codetest/Exercise2/postgresql$ python importer.py
+~/codetest/Exercise2/postgresql$ pg_dump -U postgres codetest > /tmp/codetest.sql
+~/codetest/Exercise2/postgresql$ cp /tmp/codetest.sql codetest.sql
 ```
 
 Now it is possible to launch the server with Django's **products** app.
