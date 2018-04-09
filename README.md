@@ -15,13 +15,13 @@ The code has been tested using:
 Virtual environment can be generated with **codetest27.yaml**, **requirements.txt** files found in main folder.
 
 ```bash
-$ conda env create -f path/to/codetest27.yaml
+~/codetest$ conda env create -f codetest27.yaml
 ```
 
 ```bash
-$ virtualenv <env_name>
-$ source <env_name>/bin/activate
-(<env_name>)$ pip install -r path/to/requirements.txt
+~/codetest$ virtualenv codetest27
+~/codetest$ source codetest27/bin/activate
+(codetest27)~/codetest$ pip install -r requirements.txt
 ```
 
 # EXERCISE 1: PYTHON
