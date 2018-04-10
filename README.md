@@ -1,6 +1,6 @@
 # CODE TEST
 
-This repository stores a code test compose of two exercises to demonstrate skills mainly with Python, Django, Postgresql and Docker.
+This repository stores a code test compose of two exercises to demonstrate skills mainly with Python, Django, Postgresql, Docker, micro services and API REST.
 
 ## DEPENDENCIES
 The code has been tested using:
@@ -86,6 +86,10 @@ Write a small app that publish an API Rest with these endpoints:
 • Use Python as programming language (Django framework preferred).
 
 • Don’t waste time in how consume the API or in the authentication. If it can be tested with Curl or Requests, is totally valid.
+
+## BONUS
+
+• Use Docker Compose to set up and run the Django/PostgreSQL app.
 
 ## EXERCISE 2 FOLDER CONTENT
 
