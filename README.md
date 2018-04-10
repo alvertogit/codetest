@@ -72,7 +72,7 @@ A fast and easy way to play with the **translate** and **translate_regex** funct
 
 ## REQUIREMENTS
 
-Write a small app that publish an API Rest with these endpoints:
+Write a small app that publish an API Rest with these endpoints using data from **test.xml**:
 
 • Give me 20 products ordered by price.
 
