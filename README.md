@@ -106,7 +106,6 @@ The user and the databa can be created with the following commands from shell.
 
  ```bash
 $ sudo -u postgres bash -c "psql -c \"CREATE USER codetest WITH PASSWORD 'codetest';\""
-$ sudo -u postgres bash -c "psql -c \"ALTER USER codetest WITH SUPERUSER;\""
 $ sudo -u postgres bash -c "psql -c \"CREATE DATABASE codetest WITH OWNER codetest;\""
 ```
 
