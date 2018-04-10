@@ -50,7 +50,7 @@ The exercise 1 folder contains three files:
 
 * **main.py**: It is used to test translate functions.
 
-* **Exercise1.ipynb**: Jupyter nootebook to test translate function.
+* **Exercise1.ipynb**: Jupyter nootebook to test translate functions.
 
 ## HOW TO RUN EXERCISE 1
 
@@ -102,7 +102,7 @@ The exercise 2 folder contains two folders:
 
 As first step to be able to run exercise 2 is mandatory to create in postgresql an user called *'codetest'* with password *'codetest'* and a database *'codetest'*.
 
-The user and the databa can be created with the following commands from shell.
+The user and the database can be created with the following commands from shell.
 
  ```bash
 $ sudo -u postgres bash -c "psql -c \"CREATE USER codetest WITH PASSWORD 'codetest';\""
