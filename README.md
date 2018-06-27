@@ -74,7 +74,6 @@ The exercise 1 folder contains three files:
 Exercise1
 ├── Exercise1.ipynb
 ├── function.py
-├── function.pyc
 └── main.py
 ```
 
@@ -132,28 +131,18 @@ Exercise2
 │   ├── manage.py
 │   ├── mysite
 │   │   ├── __init__.py
-│   │   ├── __init__.pyc
 │   │   ├── settings.py
-│   │   ├── settings.pyc
 │   │   ├── urls.py
-│   │   ├── urls.pyc
 │   │   ├── wsgi.py
-│   │   └── wsgi.pyc
 │   ├── products
 │   │   ├── admin.py
-│   │   ├── admin.pyc
 │   │   ├── apps.py
 │   │   ├── __init__.py
-│   │   ├── __init__.pyc
 │   │   ├── models.py
-│   │   ├── models.pyc
 │   │   ├── serializers.py
-│   │   ├── serializers.pyc
 │   │   ├── tests.py
 │   │   ├── urls.py
-│   │   ├── urls.pyc
 │   │   ├── views.py
-│   │   └── views.pyc
 │   └── requirements.txt
 └── postgresql
     ├── codetest.sql
