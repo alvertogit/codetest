@@ -12,16 +12,34 @@ The code has been tested using:
 * Docker-Compose (1.8)
 * Conda (4.4.11) virtual environment (<env_name>=codetest27)
 
-Virtual environment can be generated with **codetest27.yaml**, **requirements.txt** files found in main folder.
+Virtual environment can be generated with **codetest27.yaml**, **requirements.txt** files found in codetest main folder.
+
+Command to create virtual environment with **conda**:
 
 ```bash
 ~/codetest$ conda env create -f codetest27.yaml
 ```
 
+Command to create virtual environment with **virtualenv**:
+
 ```bash
 ~/codetest$ virtualenv codetest27
 ~/codetest$ source codetest27/bin/activate
 (codetest27)~/codetest$ pip install -r requirements.txt
+```
+
+## CODE TEST CONTENT
+
+Codetest main folder contains two folders for Exercise 1 and Exercise 2.
+
+```
+.
+├── codetest27.yaml
+├── Exercise1
+├── Exercise2
+├── jupyter_notebook_translate_function.png
+├── README.md
+└── requirements.txt
 ```
 
 # EXERCISE 1: PYTHON
@@ -51,6 +69,14 @@ The exercise 1 folder contains three files:
 * **main.py**: It is used to test translate functions.
 
 * **Exercise1.ipynb**: Jupyter nootebook to test translate functions.
+
+```
+Exercise1
+├── Exercise1.ipynb
+├── function.py
+├── function.pyc
+└── main.py
+```
 
 ## HOW TO RUN EXERCISE 1
 
@@ -97,6 +123,44 @@ The exercise 2 folder contains two folders:
 * **mysite**: It stores Django's **products** app code.
 
 * **postgresql**: It stores the **test.xml** with data to be inserted into postgresql and the **importer** app to do this process.
+
+```
+Exercise2
+├── docker-compose.yml
+├── mysite
+│   ├── Dockerfile
+│   ├── manage.py
+│   ├── mysite
+│   │   ├── __init__.py
+│   │   ├── __init__.pyc
+│   │   ├── settings.py
+│   │   ├── settings.pyc
+│   │   ├── urls.py
+│   │   ├── urls.pyc
+│   │   ├── wsgi.py
+│   │   └── wsgi.pyc
+│   ├── products
+│   │   ├── admin.py
+│   │   ├── admin.pyc
+│   │   ├── apps.py
+│   │   ├── __init__.py
+│   │   ├── __init__.pyc
+│   │   ├── models.py
+│   │   ├── models.pyc
+│   │   ├── serializers.py
+│   │   ├── serializers.pyc
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   ├── urls.pyc
+│   │   ├── views.py
+│   │   └── views.pyc
+│   └── requirements.txt
+└── postgresql
+    ├── codetest.sql
+    ├── Dockerfile
+    ├── importer.py
+    └── test.xml
+```
 
 ## HOW TO RUN EXERCISE 2 **WITHOUT DOCKER COMPOSE**
 
