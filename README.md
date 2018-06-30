@@ -1,26 +1,28 @@
 # CODE TEST
 
-This repository stores a code test compose of two exercises to demonstrate skills mainly with Python, Django, Postgresql, Docker, micro services and API REST.
+This repository stores a code test compose of two exercises to demonstrate skills mainly with [Python], [Django], [PostgreSQL], [Docker], [microservices] and [REST API].
 
 ## DEPENDENCIES
 The code has been tested using:
 
-* Python (2.7.14)
-* Django (1.11.12)
-* PostgreSQL (9.5.12)
-* Docker (18.03.0-ce)
-* Docker-Compose (1.8)
-* Conda (4.4.11) virtual environment (<env_name>=codetest27)
+* [Python] (2.7.14)
+* [Django] (1.11.12)
+* [PostgreSQL] (9.5.12)
+* [Docker] (18.03.0-ce)
+* [Docker-Compose] (1.8)
+* [Conda] (4.5.4) virtual environment (<env_name>=codetest27) included in [Python] Data Science Platform [Anaconda]
 
 Virtual environment can be generated with **codetest27.yaml**, **requirements.txt** files found in codetest main folder.
 
-Command to create virtual environment with **conda**:
+Command to configure virtual environment with [conda]:
 
 ```bash
 ~/codetest$ conda env create -f codetest27.yaml
+~/codetest$ source activate codetest27
+(codetest27)~/codetest$
 ```
 
-Command to create virtual environment with **virtualenv**:
+Command to configure virtual environment with [virtualenv]:
 
 ```bash
 ~/codetest$ virtualenv codetest27
@@ -57,13 +59,13 @@ u"123,456,789"
 ```
 
 ## NOTES
-• Use Python as programming language.
+• Use [Python] as programming language.
 
 • Input/output methods doesn’t matter.
 
 ## EXERCISE 1 FOLDER CONTENT
 
-The exercise 1 folder contains three files:
+The **Exercise1** folder contains three files:
 * **function.py**: It contents translate functions code for Exercise 1 including one solution with regular expression.
 
 * **main.py**: It is used to test translate functions.
@@ -79,7 +81,7 @@ Exercise1
 
 ## HOW TO RUN EXERCISE 1
 
-The way to to run exercise 1 is simple. Just go to Exercise1 folder and execute:
+The way to run Exercise 1 is simple. Just go to **Exercise1** folder and execute:
 
 ```bash
 ~/codetest/Exercise1$ python main.py
@@ -108,7 +110,7 @@ Write a small app that publish an API Rest with these endpoints using data from 
 • Give me all products under the “Comedy” product type.
 
 ## NOTES
-• Use Python as programming language (Django framework preferred).
+• Use [Python] as programming language ([Django] framework preferred).
 
 • Don’t waste time in how consume the API or in the authentication. If it can be tested with Curl or Requests, is totally valid.
 
@@ -118,10 +120,10 @@ Write a small app that publish an API Rest with these endpoints using data from 
 
 ## EXERCISE 2 FOLDER CONTENT
 
-The exercise 2 folder contains two folders:
+The **Exercise2** folder contains two folders:
 * **mysite**: It stores Django's **products** app code.
 
-* **postgresql**: It stores the **test.xml** with data to be inserted into postgresql and the **importer** app to do this process.
+* **postgresql**: It stores the **test.xml** with data to be inserted into [postgreSQL] and the **importer** app to do this process.
 
 ```
 Exercise2
@@ -153,7 +155,7 @@ Exercise2
 
 ## HOW TO RUN EXERCISE 2 **WITHOUT DOCKER COMPOSE**
 
-As first step to be able to run exercise 2 is mandatory to create in postgresql an user called *'codetest'* with password *'codetest'* and a database *'codetest'*.
+As first step to be able to run Exercise 2 is mandatory to create in [postgreSQL] an user called *'codetest'* with password *'codetest'* and a database *'codetest'*.
 
 The user and the database can be created with the following commands from shell.
 
@@ -178,14 +180,14 @@ CREATE TABLE "products_product" ("id" serial NOT NULL PRIMARY KEY, "product_id" 
 COMMIT;
 ```
 
-To import the database **codetest.sql** file containing the table **products_product** with all products to postgresql it is necessary to execute:
+To import the database **codetest.sql** file containing the table **products_product** with all products to [postgreSQL] it is necessary to execute:
 
 ```bash
 ~/codetest/Exercise2/postgresql$ cp codetest.sql /tmp
 ~/codetest/Exercise2/postgresql$ sudo -u postgres psql codetest < '/tmp/codetest.sql'
 ```
 
-The **codetest.sql** file was created after running the importer to insert data from **test.xml** file to postgresql **products_product** table.
+The **codetest.sql** file was created after running the importer to insert data from **test.xml** file to [postgreSQL] **products_product** table.
 
 ```bash
 ~/codetest/Exercise2/postgresql$ python importer.py
@@ -369,7 +371,7 @@ Vary: Accept
 
 ## HOW TO RUN EXERCISE 2 **WITH DOCKER COMPOSE**
 
-The steps and commands to run exercise 2 with **docker-compose** are described below.
+The steps and commands to run Exercise 2 with [docker-compose] are described below.
 
 First **settings.py** file has to be modified. **HOST** value of **DATABASE** must be changed to **'postgres_db'**:
 
@@ -386,19 +388,19 @@ DATABASES = {
 }
 ```
 
-Before executing docker-compose commands local postgresql database service must be stopped.
+Before executing [docker-compose] commands local [postgreSQL] database service must be stopped.
 
 ```bash
 ~/codetest2/Exercise2$ sudo service postgresql stop
 ```
 
-Then docker-compose can be execute to build services.
+Then [docker-compose] can be execute to build services.
 
 ```bash
 ~/codetest2/Exercise2$ sudo docker-compose build
 ```
 
-Next step consists in executing docker-compose up command.
+Next step consists in executing [docker-compose] up command.
 
 ```bash
 ~/codetest2/Exercise2$ sudo docker-compose up
@@ -415,7 +417,7 @@ postgres_db_1  | LOG:  database system is ready to accept connections
 postgres_db_1  | LOG:  autovacuum launcher started
 ```
 
-If this happens simply press 'Control+C', wait patienly to return to shell and repeat again the same command. If everything goes fine at the end it should appear something similar to:
+If this happens simply press 'Control+C', wait patiently to return to shell and repeat again the same command. If everything goes fine at the end it should appear something similar to:
 
 ```bash
 ...
@@ -436,3 +438,13 @@ Now it is possible to open a web browser and paste the URL as described in the p
 http://127.0.0.1:8000/products/
 ```
 
+[Python]: https://www.python.org/
+[Django]: https://www.djangoproject.com/
+[PostgreSQL]: https://www.postgresql.org/
+[Docker]: https://www.docker.com/
+[microservices]: https://en.wikipedia.org/wiki/Microservices
+[REST API]: https://en.wikipedia.org/wiki/Representational_state_transfer
+[Docker-Compose]: https://github.com/docker/compose
+[Conda]: https://conda.io/docs/index.html
+[Anaconda]: https://www.anaconda.com/
+[virtualenv]: https://virtualenv.pypa.io/en/stable/
