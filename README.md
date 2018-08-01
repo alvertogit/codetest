@@ -10,11 +10,11 @@ The code has been tested using:
 * [PostgreSQL] (9.5.12)
 * [Docker] (18.03.0-ce)
 * [Docker-Compose] (1.8)
-* [Conda] (4.5.4) virtual environment (<env_name>=codetest27) included in [Python] Data Science Platform [Anaconda]
+* [Conda] (4.5.4) virtual environment included in [Python] Data Science Platform [Anaconda]
 
-Virtual environment can be generated with **codetest27.yaml**, **requirements.txt** files found in codetest main folder.
+Virtual environment (<env_name>=codetest27) can be generated with **codetest27.yaml**, **requirements.txt** files found in codetest main folder.
 
-Command to configure virtual environment with [conda]:
+Command to configure virtual environment with [Conda]:
 
 ```bash
 ~/codetest$ conda env create -f codetest27.yaml
