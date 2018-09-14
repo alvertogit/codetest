@@ -10,7 +10,7 @@ The code has been tested using:
 * [PostgreSQL] (9.5.12)
 * [Docker] (18.03.0-ce)
 * [Docker-Compose] (1.8)
-* [Conda] (4.5.4) virtual environment included in [Python] Data Science Platform [Anaconda]
+* [Conda] (4.5.11) virtual environment included in [Python] Data Science Platform [Anaconda]
 
 Virtual environment (<env_name>=codetest27) can be generated with **codetest27.yaml**, **requirements.txt** files found in codetest main folder.
 
@@ -39,7 +39,7 @@ Codetest main folder contains two folders for Exercise 1 and Exercise 2.
 ├── codetest27.yaml
 ├── Exercise1
 ├── Exercise2
-├── jupyter_notebook_translate_function.png
+├── images
 ├── README.md
 └── requirements.txt
 ```
@@ -88,18 +88,18 @@ The way to run Exercise 1 is simple. Just go to **Exercise1** folder and execute
 ```
 
 A fast and easy way to play with the **translate** and **translate_regex** functions is through a Jupyter notebook. One notebook is stored in the same **Exercise1** folder, to run it use the command shown below:
-
+S
 ```bash
 ~/codetest/Exercise1$ jupyter notebook Exercise1.ipynb
 ```
 
-![Jupyter notebook translate function](jupyter_notebook_translate_function.png)
+![Jupyter notebook translate function](images/jupyter_notebook_translate_function.png)
 
 # EXERCISE 2: DATA & API TEST
 
 ## REQUIREMENTS
 
-Write a small app that publish an API Rest with these endpoints using data from **test.xml**:
+Write a small app that publish an [REST API] with these endpoints using data from **test.xml**:
 
 • Give me 20 products ordered by price.
 
