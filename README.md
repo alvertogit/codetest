@@ -6,7 +6,7 @@ This repository stores a code test compose of two exercises to demonstrate skill
 The code has been tested using:
 
 * [Python] (2.7.14)
-* [Django] (1.11.12)
+* [Django] (1.11.16)
 * [PostgreSQL] (9.5.12)
 * [Docker] (18.03.0-ce)
 * [Docker-Compose] (1.8)
@@ -391,19 +391,19 @@ DATABASES = {
 Before executing [docker-compose] commands local [postgreSQL] database service must be stopped.
 
 ```bash
-~/codetest2/Exercise2$ sudo service postgresql stop
+~/codetest/Exercise2$ sudo service postgresql stop
 ```
 
 Then [docker-compose] can be execute to build services.
 
 ```bash
-~/codetest2/Exercise2$ sudo docker-compose build
+~/codetest/Exercise2$ sudo docker-compose build
 ```
 
 Next step consists in executing [docker-compose] up command.
 
 ```bash
-~/codetest2/Exercise2$ sudo docker-compose up
+~/codetest/Exercise2$ sudo docker-compose up
 ```
 
 It is possible that for the first time the command keeps stopped at one point as shown below: 
@@ -411,7 +411,7 @@ It is possible that for the first time the command keeps stopped at one point as
 ```bash
 ...
 ...
-postgres_db_1  | LOG:  database system was shut down at 2018-04-09 18:57:18 UTC
+postgres_db_1  | LOG:  database system was shut down at 2018-10-05 08:29:36 UTC
 postgres_db_1  | LOG:  MultiXact member wraparound protections are now enabled
 postgres_db_1  | LOG:  database system is ready to accept connections
 postgres_db_1  | LOG:  autovacuum launcher started
@@ -425,8 +425,8 @@ If this happens simply press 'Control+C', wait patiently to return to shell and 
 web_1          | Performing system checks...
 web_1          | 
 web_1          | System check identified no issues (0 silenced).
-web_1          | April 09, 2018 - 18:57:36
-web_1          | Django version 1.11.12, using settings 'mysite.settings'
+web_1          | October 05, 2018 - 08:32:49
+web_1          | Django version 1.11.16, using settings 'mysite.settings'
 web_1          | Starting development server at http://0.0.0.0:8000/
 web_1          | Quit the server with CONTROL-C.
 
