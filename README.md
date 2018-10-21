@@ -3,16 +3,17 @@
 This repository stores a code test compose of two exercises to demonstrate skills mainly with [Python], [Django], [PostgreSQL], [Docker], [microservices] and [REST API].
 
 ## DEPENDENCIES
+
 The code has been tested using:
 
-* [Python] (2.7.14)
+* [Python] (2.7.15)
 * [Django] (1.11.16)
-* [PostgreSQL] (9.5.12)
-* [Docker] (18.03.0-ce)
-* [Docker-Compose] (1.8)
+* [PostgreSQL] (11.0)
+* [Docker] (18.06.1-ce)
+* [Docker-Compose] (1.22)
 * [Conda] (4.5.11) virtual environment included in [Python] Data Science Platform [Anaconda]
 
-Virtual environment (<env_name>=codetest27) can be generated with **codetest27.yaml**, **requirements.txt** files found in codetest main folder.
+Virtual environment (<env_name>=**codetest27**) can be generated with **codetest27.yaml**, **requirements.txt** files found in codetest main folder.
 
 Command to configure virtual environment with [Conda]:
 
@@ -34,8 +35,8 @@ Command to configure virtual environment with [virtualenv]:
 
 Codetest main folder contains two folders for Exercise 1 and Exercise 2.
 
-```
-.
+```bash
+codetest
 ├── codetest27.yaml
 ├── Exercise1
 ├── Exercise2
@@ -59,6 +60,7 @@ u"123,456,789"
 ```
 
 ## NOTES
+
 • Use [Python] as programming language.
 
 • Input/output methods doesn’t matter.
@@ -66,13 +68,14 @@ u"123,456,789"
 ## EXERCISE 1 FOLDER CONTENT
 
 The **Exercise1** folder contains three files:
+
 * **function.py**: It contents translate functions code for Exercise 1 including one solution with regular expression.
 
 * **main.py**: It is used to test translate functions.
 
 * **Exercise1.ipynb**: Jupyter nootebook to test translate functions.
 
-```
+```bash
 Exercise1
 ├── Exercise1.ipynb
 ├── function.py
@@ -88,7 +91,7 @@ The way to run Exercise 1 is simple. Just go to **Exercise1** folder and execute
 ```
 
 A fast and easy way to play with the **translate** and **translate_regex** functions is through a Jupyter notebook. One notebook is stored in the same **Exercise1** folder, to run it use the command shown below:
-S
+
 ```bash
 ~/codetest/Exercise1$ jupyter notebook Exercise1.ipynb
 ```
@@ -110,6 +113,7 @@ Write a small app that publish an [REST API] with these endpoints using data fro
 • Give me all products under the “Comedy” product type.
 
 ## NOTES
+
 • Use [Python] as programming language ([Django] framework preferred).
 
 • Don’t waste time in how consume the API or in the authentication. If it can be tested with Curl or Requests, is totally valid.
@@ -121,11 +125,12 @@ Write a small app that publish an [REST API] with these endpoints using data fro
 ## EXERCISE 2 FOLDER CONTENT
 
 The **Exercise2** folder contains two folders:
+
 * **mysite**: It stores Django's **products** app code.
 
 * **postgresql**: It stores the **test.xml** with data to be inserted into [postgreSQL] and the **importer** app to do this process.
 
-```
+```bash
 Exercise2
 ├── docker-compose.yml
 ├── mysite
@@ -159,9 +164,9 @@ As first step to be able to run Exercise 2 is mandatory to create in [postgreSQL
 
 The user and the database can be created with the following commands from shell.
 
- ```bash
-$ sudo -u postgres bash -c "psql -c \"CREATE USER codetest WITH PASSWORD 'codetest';\""
-$ sudo -u postgres bash -c "psql -c \"CREATE DATABASE codetest WITH OWNER codetest;\""
+```bash
+~$ sudo -u postgres bash -c "psql -c \"CREATE USER codetest WITH PASSWORD 'codetest';\""
+~$ sudo -u postgres bash -c "psql -c \"CREATE DATABASE codetest WITH OWNER codetest;\""
 ```
 
 The next step consists in executing the following commands to prepare the Django's **products** app.
@@ -203,13 +208,13 @@ Now it is possible to launch the server with Django's **products** app.
 
 There are different ways to check that the server is running properly. One is opening a web browser such as Chrome or Mozilla and paste the following URL:
 
-```
+```bash
 http://127.0.0.1:8000/products/
 ```
 
 The web browser should show something similar to:
 
-```
+```bash
 HTTP 200 OK
 Allow: GET, HEAD, OPTIONS
 Content-Type: application/json
@@ -227,7 +232,7 @@ The description of the URLs that are above:
 
 * "price" URL: Gets 20 products ordered by price.
 
-```
+```bash
 HTTP 200 OK
 Allow: GET, POST, HEAD, OPTIONS
 Content-Type: application/json
@@ -263,7 +268,7 @@ Vary: Accept
 
 * "discount" URL: Gets 20 products ordered by discount (price - custom_label_0).
 
-```
+```bash
 HTTP 200 OK
 Allow: GET, POST, HEAD, OPTIONS
 Content-Type: application/json
@@ -299,7 +304,7 @@ Vary: Accept
 
 * "mostdiscounted" URL: Gets the most discounted 20 products.
 
-```
+```bash
 HTTP 200 OK
 Allow: GET, POST, HEAD, OPTIONS
 Content-Type: application/json
@@ -335,7 +340,7 @@ Vary: Accept
 
 * "typecomedy" URL: Gets all products under “Comedy” product type.
 
-```
+```bash
 HTTP 200 OK
 Allow: GET, POST, HEAD, OPTIONS
 Content-Type: application/json
@@ -434,7 +439,7 @@ web_1          | Quit the server with CONTROL-C.
 
 Now it is possible to open a web browser and paste the URL as described in the previous paragraph to check that the server is running fine.
 
-```
+```bash
 http://127.0.0.1:8000/products/
 ```
 
