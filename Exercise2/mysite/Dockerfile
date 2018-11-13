@@ -5,6 +5,3 @@ FROM python:2.7.15-slim-stretch
  ADD ./requirements.txt /
  RUN pip install -r /requirements.txt
  ADD . /mysite
-
- 
-
