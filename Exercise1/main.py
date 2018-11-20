@@ -10,10 +10,10 @@ __copyright__   = "Copyright 2018"
 from function import translate, translate_regex
 
 if __name__ == '__main__':
-    print "\nExecuting translate function\n"
-    print translate (1234)
-    print translate (123456789)
-    print "\nExecuting translate_regex function\n"
-    print translate_regex (1234)
-    print translate_regex (123456789)
-    print translate_regex ("12345a")
+    print("Executing translate function")
+    print(translate (1234))
+    print(translate (123456789))
+    print("Executing translate_regex function")
+    print(translate_regex(1234))
+    print(translate_regex(123456789))
+    print(translate_regex("12345a"))

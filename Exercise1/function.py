@@ -15,9 +15,9 @@ def translate (intValue):
     that integer with commas separating groups of 3 digits. For example:
 
     print translate (1234)
-    u"1,234"
+    '1,234'
     print translate (123456789)
-    u"123,456,789"
+    '123,456,789'
 
     Args:
         intValue (int): The integer parameter to be translated.
@@ -31,9 +31,9 @@ def translate (intValue):
     """
 
     try:
-        val = int(intValue)
+        int(intValue)
     except ValueError:
-        print "Error: Input is not an integer"
+        print("Error: Input is not an integer")
         sys.exit(1)
     
     # integer input is transformed into string
@@ -43,7 +43,7 @@ def translate (intValue):
     # separating groups of 3 digits
     groupSize = 3
     # string result with commas to be returned
-    result = u''
+    result = ''
     
     # loop over strValue to build result adding commas
     for i, c in enumerate(strValue):
@@ -61,9 +61,9 @@ def translate_regex (intValue):
     For example:
 
     print translate_regex (1234)
-    u"1,234"
+    '1,234'
     print translate_regex (123456789)
-    u"123,456,789"
+    '123,456,789'
 
     Args:
         intValue (int): The integer parameter to be translated.
@@ -77,15 +77,15 @@ def translate_regex (intValue):
     """
 
     try:
-        val = int(intValue)
+        int(intValue)
     except ValueError:
-        print "Error: Input is not an integer"
+        print("Error: Input is not an integer")
         sys.exit(1)
     
     # integer input is transformed into string
     strValue = str(intValue)
     # string result with commas to be returned
-    result = u''
+    result = ''
     
     # comma is added between groups of 3 digits except at the end using regex
     result = re.sub(r'(?<=\d)(?=(\d\d\d)+(?!\d))', ',', strValue)

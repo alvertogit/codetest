@@ -1,4 +1,4 @@
-FROM python:2.7.15-slim-stretch
+FROM python:3.6.7-slim-stretch
  ENV PYTHONUNBUFFERED 1
  RUN mkdir /mysite
  WORKDIR /mysite

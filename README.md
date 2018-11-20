@@ -21,29 +21,29 @@ This repository stores a code test compose of two exercises to demonstrate skill
 
 The code has been tested using:
 
-* [Python] (2.7.15): an interpreted high-level programming language for general-purpose programming.
+* [Python] (3.6.7): an interpreted high-level programming language for general-purpose programming.
 * [Django] (1.11.16): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
 * [PostgreSQL] (11.1): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
-* [Docker] (18.06.1-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
-* [Docker-Compose] (1.22): a tool for defining and running multi-container [Docker] applications.
+* [Docker] (18.09.0-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
+* [Docker-Compose] (1.23.1): a tool for defining and running multi-container [Docker] applications.
 * [Conda] (4.5.11): a package and virtual environment manager included in [Python] Data Science Platform [Anaconda].
 
-Virtual environment (<env_name>=**codetest27**) can be generated with **codetest27.yaml**, **requirements.txt** files found in codetest main folder.
+Virtual environment (<env_name>=**codetest36**) can be generated with **codetest36.yaml**, **requirements.txt** files found in codetest main folder.
 
 Command to configure virtual environment with [Conda]:
 
 ```bash
-~/codetest$ conda env create -f codetest27.yaml
-~/codetest$ source activate codetest27
-(codetest27)~/codetest$
+~/codetest$ conda env create -f codetest36.yaml
+~/codetest$ source activate codetest36
+(codetest36)~/codetest$
 ```
 
 Command to configure virtual environment with [virtualenv]:
 
 ```bash
-~/codetest$ virtualenv codetest27
-~/codetest$ source codetest27/bin/activate
-(codetest27)~/codetest$ pip install -r requirements.txt
+~/codetest$ virtualenv codetest36
+~/codetest$ source codetest36/bin/activate
+(codetest36)~/codetest$ pip install -r requirements.txt
 ```
 
 ## CODE TEST CONTENT
@@ -52,7 +52,7 @@ Codetest main folder contains two folders for Exercise 1 and Exercise 2.
 
 ```bash
 codetest
-├── codetest27.yaml
+├── codetest36.yaml
 ├── Exercise1
 ├── Exercise2
 ├── images
@@ -69,9 +69,9 @@ groups of 3 digits. For example:
 
 ```python
 print translate (1234)
-u"1,234"
+'1,234'
 print translate (123456789)
-u"123,456,789"
+'123,456,789'
 ```
 
 ### EXERCISE 1 NOTES
