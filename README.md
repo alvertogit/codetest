@@ -22,7 +22,7 @@ This repository stores a code test compose of two exercises to demonstrate skill
 The code has been tested using:
 
 * [Python] (3.6.7): an interpreted high-level programming language for general-purpose programming.
-* [Django] (1.11.16): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
+* [Django] (2.1.4): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
 * [PostgreSQL] (11.1): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
 * [Docker] (18.09.0-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
 * [Docker-Compose] (1.23.1): a tool for defining and running multi-container [Docker] applications.
@@ -193,13 +193,13 @@ Before executing [docker-compose] commands local [postgreSQL] database service m
 Then [docker-compose] can be executed to build services.
 
 ```bash
-~/codetest/Exercise2$ sudo docker-compose build
+~/codetest/Exercise2$ docker-compose build
 ```
 
 Next step consists in executing [docker-compose] up command.
 
 ```bash
-~/codetest/Exercise2$ sudo docker-compose up
+~/codetest/Exercise2$ docker-compose up
 ```
 
 It is possible that for the first time the command keeps stopped at one point as shown below:
@@ -409,14 +409,28 @@ The user and the database can be created with the following commands from shell.
 ~$ sudo -u postgres bash -c "psql -c \"CREATE DATABASE codetest WITH OWNER codetest;\""
 ```
 
+If it is not already done then create and activate the virtual environment (example with [Conda]):
+
+```bash
+~/codetest$ conda env create -f codetest36.yaml
+~/codetest$ source activate codetest36
+(codetest36)~/codetest$
+```
+
+Load .env file.
+
+```bash
+(codetest36)~/codetest/Exercise2$ export $(grep -v '^#' .env | xargs -d '\n')
+```
+
 The next step consists in executing the following commands to prepare the [Django]'s **products** app.
 
 ```bash
-~/codetest/Exercise2/mysite$ python manage.py migrate
+(codetest36)~/codetest/Exercise2/mysite$ python manage.py migrate
 ...
-~/codetest/Exercise2/mysite$ python manage.py makemigrations products
+(codetest36)~/codetest/Exercise2/mysite$ python manage.py makemigrations products
 ...
-~/codetest/Exercise2/mysite$ python manage.py sqlmigrate products 0001
+(codetest36)~/codetest/Exercise2/mysite$ python manage.py sqlmigrate products 0001
 BEGIN;
 --
 -- Create model Product
@@ -428,22 +442,22 @@ COMMIT;
 To import the database **codetest.sql** file containing the table **products_product** with all products to [postgreSQL] it is necessary to execute:
 
 ```bash
-~/codetest/Exercise2/postgresql$ cp codetest.sql /tmp
-~/codetest/Exercise2/postgresql$ sudo -u postgres psql codetest < '/tmp/codetest.sql'
+(codetest36)~/codetest/Exercise2/postgresql$ cp codetest.sql /tmp
+(codetest36)~/codetest/Exercise2/postgresql$ sudo -u postgres psql codetest < '/tmp/codetest.sql'
 ```
 
 The **codetest.sql** file was created after running the importer to insert data from **test.xml** file to [postgreSQL] **products_product** table.
 
 ```bash
-~/codetest/Exercise2/postgresql$ python importer.py
-~/codetest/Exercise2/postgresql$ pg_dump -U postgres codetest > /tmp/codetest.sql
-~/codetest/Exercise2/postgresql$ cp /tmp/codetest.sql codetest.sql
+(codetest36)~/codetest/Exercise2/postgresql$ python importer.py
+(codetest36)~/codetest/Exercise2/postgresql$ pg_dump -U postgres codetest -h localhost > /tmp/codetest.sql
+(codetest36)~/codetest/Exercise2/postgresql$ cp /tmp/codetest.sql codetest.sql
 ```
 
 Now it is possible to launch the server with [Django]'s **products** app.
 
 ```bash
-~/codetest/Exercise2/mysite$ python manage.py runserver 8000
+(codetest36)~/codetest/Exercise2/mysite$ python manage.py runserver 8000
 ```
 
 Now it is possible to open a web browser and paste the URL as described in the previous paragraph to check that the server is running fine.

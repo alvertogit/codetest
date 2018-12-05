@@ -44,7 +44,7 @@ dependencies:
   - pip:
     - cached-property==1.5.1
     - chardet==3.0.4
-    - django==1.11.16
+    - django==2.1.4
     - django-url-filter==0.3.10
     - djangorestframework==3.9.0
     - docutils==0.14
