@@ -1,0 +1,45 @@
+version: "3.7"
+
+services:
+  postgres_db:
+    build: postgresql
+    env_file:
+      - mysite/.env
+    networks:
+      - postgres_db_network
+
+  web:
+    build: mysite
+    env_file:
+      - mysite/.env
+    volumes:
+      - static_volume:/mysite/static
+      - media_volume:/mysite/media
+    networks:
+      - nginx_network
+      - postgres_db_network
+    depends_on:
+      - postgres_db
+
+  nginx:
+    image: nginx:1.15.7-alpine
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - static_volume:/mysite/static
+      - media_volume:/mysite/media
+    depends_on:
+      - web
+    networks:
+      - nginx_network
+
+networks:
+  nginx_network:
+    driver: bridge
+  postgres_db_network:
+    driver: bridge
+
+volumes:
+  static_volume:
+  media_volume:

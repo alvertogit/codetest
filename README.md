@@ -1,6 +1,6 @@
 # CODE TEST <!-- omit in toc -->
 
-This repository stores a code test compose of two exercises to demonstrate skills mainly with [Python], [Django], [PostgreSQL], [Docker], [Jupyter Notebook], [microservices] and [REST API].
+This repository stores a code test compose of two exercises to demonstrate skills mainly with [Python], [Django], [Gunicorn], [NGINX], [PostgreSQL], [Docker], [Jupyter Notebook], [microservices] and [REST API].
 
 * [DEPENDENCIES](#dependencies)
 * [CODE TEST CONTENT](#code-test-content)
@@ -23,6 +23,8 @@ The code has been tested using:
 
 * [Python] (3.6.7): an interpreted high-level programming language for general-purpose programming.
 * [Django] (2.1.4): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
+* [Gunicorn] (19.9.0): a [Python] [WSGI] HTTP Server for UNIX.
+* [NGINX] (1.15.7): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
 * [PostgreSQL] (11.1): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
 * [Docker] (18.09.0-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
 * [Docker-Compose] (1.23.1): a tool for defining and running multi-container [Docker] applications.
@@ -53,8 +55,8 @@ Codetest main folder contains two folders for Exercise 1 and Exercise 2.
 ```bash
 codetest
 ├── codetest36.yaml
-├── Exercise1
-├── Exercise2
+├── exercise1
+├── exercise2
 ├── images
 ├── README.md
 └── requirements.txt
@@ -82,7 +84,7 @@ print translate (123456789)
 
 ### EXERCISE 1 FOLDER CONTENT
 
-The **Exercise1** folder contains three files:
+The **exercise1** folder contains three files:
 
 * **function.py**: It contents translate functions code for Exercise 1 including one solution with regular expression.
 
@@ -91,7 +93,7 @@ The **Exercise1** folder contains three files:
 * **Exercise1.ipynb**: [Jupyter Notebook] to test translate functions.
 
 ```bash
-Exercise1
+exercise1
 ├── Exercise1.ipynb
 ├── function.py
 └── main.py
@@ -99,16 +101,16 @@ Exercise1
 
 ### HOW TO RUN EXERCISE 1
 
-The way to run Exercise 1 is simple. Just go to **Exercise1** folder and execute:
+The way to run Exercise 1 is simple. Just go to **exercise1** folder and execute:
 
 ```bash
-~/codetest/Exercise1$ python main.py
+~/codetest/exercise1$ python main.py
 ```
 
-A good way to play with the **translate** and **translate_regex** functions is through a [Jupyter Notebook]. One notebook is stored in the same **Exercise1** folder, to run it use the command shown below:
+A good way to play with the **translate** and **translate_regex** functions is through a [Jupyter Notebook]. One notebook is stored in the same **exercise1** folder, to run it use the command shown below:
 
 ```bash
-~/codetest/Exercise1$ jupyter notebook Exercise1.ipynb
+~/codetest/exercise1$ jupyter notebook Exercise1.ipynb
 ```
 
 ![Jupyter notebook translate function](images/jupyter_notebook_translate_function.png)
@@ -139,13 +141,13 @@ Write a small app that publish an [REST API] with these endpoints using data fro
 
 ### EXERCISE 2 FOLDER CONTENT
 
-The **Exercise2** folder contains:
+The **exercise2** folder contains:
 
 ```bash
-Exercise2
-├── .env.example
+exercise2
 ├── docker-compose.yml
 ├── mysite
+│   ├── .env.example
 │   ├── Dockerfile
 │   ├── manage.py
 │   ├── mysite
@@ -163,6 +165,9 @@ Exercise2
 │   │   ├── urls.py
 │   │   ├── views.py
 │   └── requirements.txt
+├── nginx
+│   └── conf.d
+│       └── local.conf
 └── postgresql
     ├── codetest.sql
     ├── Dockerfile
@@ -170,11 +175,11 @@ Exercise2
     └── test.xml
 ```
 
-* **.env.example**: Example environment file that can be used to create **.env** file.
-
 * **docker-compose.yml**: creates the [Django] and [postgreSQL] [Docker] containers in which the applications shall run.
 
 * **mysite**: It stores [Django]'s **products** app code.
+
+* **nginx**: It stores [NGINX]'s configuration.
 
 * **postgresql**: It stores the **test.xml** with data to be inserted into [postgreSQL] and the **importer** app to do this process.
 
@@ -182,56 +187,40 @@ Exercise2
 
 The steps and commands to run Exercise 2 with [docker-compose] are described below.
 
-First create environment **.env** file using **.env.example** file as template. Exercise 2 should run fine with default template settings.
-
-Before executing [docker-compose] commands local [postgreSQL] database service must be stopped.
-
-```bash
-~/codetest/Exercise2$ sudo service postgresql stop
-```
+First create environment **.env** file using **.env.example** file as template inside **mysite** folder. Exercise 2 should run fine with default template settings.
 
 Then [docker-compose] can be executed to build services.
 
 ```bash
-~/codetest/Exercise2$ docker-compose build
+~/codetest/exercise2$ docker-compose build
 ```
 
 Next step consists in executing [docker-compose] up command.
 
 ```bash
-~/codetest/Exercise2$ docker-compose up
+~/codetest/exercise2$ docker-compose up
 ```
 
 It is possible that for the first time the command keeps stopped at one point as shown below:
 
 ```bash
 ...
-...
-postgres_db_1  | LOG:  database system was shut down at 2018-10-05 08:29:36 UTC
-postgres_db_1  | LOG:  MultiXact member wraparound protections are now enabled
-postgres_db_1  | LOG:  database system is ready to accept connections
-postgres_db_1  | LOG:  autovacuum launcher started
+postgres_db_1_81cb47c30feg | 2018-12-11 09:59:15.676 UTC [42] ERROR:  role "postgres" does not exist
+postgres_db_1_81cb47c30feg | 2018-12-11 09:59:15.676 UTC [42] STATEMENT:  REVOKE ALL ON SCHEMA public FROM postgres;
+exercise2_postgres_db_1_81cb47c30feg exited with code 3
 ```
 
 If this happens simply press 'Control+C', wait patiently to return to shell and repeat again the same command. If everything goes fine at the end it should appear something similar to:
 
 ```bash
 ...
-...
-web_1          | Performing system checks...
-web_1          |
-web_1          | System check identified no issues (0 silenced).
-web_1          | October 05, 2018 - 08:32:49
-web_1          | Django version 1.11.16, using settings 'mysite.settings'
-web_1          | Starting development server at http://0.0.0.0:8000/
-web_1          | Quit the server with CONTROL-C.
-
+postgres_db_1_81cb47c30feg | 2018-12-11 09:59:27.670 UTC [1] LOG:  database system is ready to accept connections
 ```
 
 There are different ways to check that the server is running properly. One is opening a web browser such as Chrome or Mozilla and paste the following URL:
 
 ```bash
-http://127.0.0.1:8000/products/
+http://127.0.0.1/products/
 ```
 
 The web browser should show something similar to:
@@ -243,10 +232,10 @@ Content-Type: application/json
 Vary: Accept
 
 {
-    "price": "http://127.0.0.1:8000/products/price/",
-    "discount": "http://127.0.0.1:8000/products/discount/",
-    "mostdiscounted": "http://127.0.0.1:8000/products/mostdiscounted/",
-    "typecomedy": "http://127.0.0.1:8000/products/typecomedy/"
+    "price": "http://127.0.0.1/products/price/",
+    "discount": "http://127.0.0.1/products/discount/",
+    "mostdiscounted": "http://127.0.0.1/products/mostdiscounted/",
+    "typecomedy": "http://127.0.0.1/products/typecomedy/"
 }
 ```
 
@@ -398,7 +387,9 @@ Vary: Accept
 
 ### HOW TO RUN EXERCISE 2 **WITHOUT DOCKER COMPOSE**
 
-First create environment **.env** file using **.env.example** file as template. Make sure that *POSTGRES_HOST=postgres_db* line is commented in **.env** or assign the value to *POSTGRES_HOST=127.0.0.1*.
+Please note that this procedure requires having a running [postgreSQL] database accesible locally through 5432 port on your system. [Django] is used directly without employing [GNINX] or [Gunicorn].
+
+First create environment **.env** file using **.env.example** file as template inside **mysite** folder. Make sure that *POSTGRES_HOST=postgres_db* line is commented in **.env** or assign the value to *POSTGRES_HOST=127.0.0.1*.
 
 As next step to be able to run Exercise 2 is mandatory to create in [postgreSQL] an user called *'codetest'* with password *'codetest'* and a database *'codetest'*.
 
@@ -420,17 +411,17 @@ If it is not already done then create and activate the virtual environment (exam
 Load .env file.
 
 ```bash
-(codetest36)~/codetest/Exercise2$ export $(grep -v '^#' .env | xargs -d '\n')
+(codetest36)~/codetest/exercise2$ export $(grep -v '^#' .env | xargs -d '\n')
 ```
 
 The next step consists in executing the following commands to prepare the [Django]'s **products** app.
 
 ```bash
-(codetest36)~/codetest/Exercise2/mysite$ python manage.py migrate
+(codetest36)~/codetest/exercise2/mysite$ python manage.py migrate
 ...
-(codetest36)~/codetest/Exercise2/mysite$ python manage.py makemigrations products
+(codetest36)~/codetest/exercise2/mysite$ python manage.py makemigrations products
 ...
-(codetest36)~/codetest/Exercise2/mysite$ python manage.py sqlmigrate products 0001
+(codetest36)~/codetest/exercise2/mysite$ python manage.py sqlmigrate products 0001
 BEGIN;
 --
 -- Create model Product
@@ -439,25 +430,34 @@ CREATE TABLE "products_product" ("id" serial NOT NULL PRIMARY KEY, "product_id" 
 COMMIT;
 ```
 
+It is possible to use [Python] shell for checking [Django] configuration:
+
+```bash
+~/mysite$ python manage.py shell
+In [1]: from django.conf import settings
+In [2]: print(settings.BASE_DIR)
+/mysite
+```
+
 To import the database **codetest.sql** file containing the table **products_product** with all products to [postgreSQL] it is necessary to execute:
 
 ```bash
-(codetest36)~/codetest/Exercise2/postgresql$ cp codetest.sql /tmp
-(codetest36)~/codetest/Exercise2/postgresql$ sudo -u postgres psql codetest < '/tmp/codetest.sql'
+(codetest36)~/codetest/exercise2/postgresql$ cp codetest.sql /tmp
+(codetest36)~/codetest/exercise2/postgresql$ sudo -u postgres psql codetest < '/tmp/codetest.sql'
 ```
 
 The **codetest.sql** file was created after running the importer to insert data from **test.xml** file to [postgreSQL] **products_product** table.
 
 ```bash
-(codetest36)~/codetest/Exercise2/postgresql$ python importer.py
-(codetest36)~/codetest/Exercise2/postgresql$ pg_dump -U postgres codetest -h localhost > /tmp/codetest.sql
-(codetest36)~/codetest/Exercise2/postgresql$ cp /tmp/codetest.sql codetest.sql
+(codetest36)~/codetest/exercise2/postgresql$ python importer.py
+(codetest36)~/codetest/exercise2/postgresql$ pg_dump -U postgres codetest -h localhost > /tmp/codetest.sql
+(codetest36)~/codetest/exercise2/postgresql$ cp /tmp/codetest.sql codetest.sql
 ```
 
 Now it is possible to launch the server with [Django]'s **products** app.
 
 ```bash
-(codetest36)~/codetest/Exercise2/mysite$ python manage.py runserver 8000
+(codetest36)~/codetest/exercise2/mysite$ python manage.py runserver 8000
 ```
 
 Now it is possible to open a web browser and paste the URL as described in the previous paragraph to check that the server is running fine.
@@ -468,6 +468,9 @@ http://127.0.0.1:8000/products/
 
 [Python]: https://www.python.org/
 [Django]: https://www.djangoproject.com/
+[Gunicorn]: https://gunicorn.org/
+[WSGI]: https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface
+[NGINX]: https://www.nginx.com/
 [PostgreSQL]: https://www.postgresql.org/
 [Docker]: https://www.docker.com/
 [microservices]: https://en.wikipedia.org/wiki/Microservices
