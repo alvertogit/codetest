@@ -14,6 +14,7 @@ This repository stores a code test compose of two exercises to demonstrate skill
   * [EXERCISE 2 NOTES](#exercise-2-notes)
   * [BONUS](#bonus)
   * [EXERCISE 2 FOLDER CONTENT](#exercise-2-folder-content)
+  * [EXERCISE 2 ARCHITECTURE](#exercise-2-architecture)
   * [HOW TO RUN EXERCISE 2 **WITH DOCKER COMPOSE**](#how-to-run-exercise-2-with-docker-compose)
   * [HOW TO RUN EXERCISE 2 **WITHOUT DOCKER COMPOSE**](#how-to-run-exercise-2-without-docker-compose)
 
@@ -182,6 +183,24 @@ exercise2
 * **nginx**: It stores [NGINX]'s configuration.
 
 * **postgresql**: It stores the **test.xml** with data to be inserted into [postgreSQL] and the **importer** app to do this process.
+
+### EXERCISE 2 ARCHITECTURE
+
+The architecture created with [docker-compose] uses three different [Docker] containers for:
+
+* [NGINX].
+* [Django] and [Gunicorn].
+* [postgreSQL].
+
+The following diagram illustrates the architecture in blocks:
+
+```bash
+            _______            ___________________            ____________
+           |       |          |                   |          |            |
+ World <──>| NGINX ├<─bridge─>| Django + Gunicorn ├<─bridge─>| postgreSQL |
+           |       |          |                   |          |            |
+            ¯¯¯¯¯¯¯            ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯            ¯¯¯¯¯¯¯¯¯¯¯¯
+```
 
 ### HOW TO RUN EXERCISE 2 **WITH DOCKER COMPOSE**
 
