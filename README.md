@@ -28,7 +28,7 @@ The code has been tested using:
 * [NGINX] (1.15.7): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
 * [PostgreSQL] (11.1): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
 * [Docker] (18.09.0-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
-* [Docker-Compose] (1.23.1): a tool for defining and running multi-container [Docker] applications.
+* [Docker-Compose] (1.23.2): a tool for defining and running multi-container [Docker] applications.
 * [Conda] (4.5.11): a package and virtual environment manager included in [Python] Data Science Platform [Anaconda].
 
 Virtual environment (<env_name>=**codetest36**) can be generated with **codetest36.yaml**, **requirements.txt** files found in codetest main folder.
@@ -406,7 +406,7 @@ Vary: Accept
 
 ### HOW TO RUN EXERCISE 2 **WITHOUT DOCKER COMPOSE**
 
-Please note that this procedure requires having a running [postgreSQL] database accesible locally through 5432 port on your system. [Django] is used directly without employing [GNINX] or [Gunicorn].
+Please note that this procedure requires having a running [postgreSQL] database accesible locally through 5432 port on your system. [Django] is used directly without employing [NGINX] or [Gunicorn].
 
 First create environment **.env** file using **.env.example** file as template inside **mysite** folder. Make sure that *POSTGRES_HOST=postgres_db* line is commented in **.env** or assign the value to *POSTGRES_HOST=127.0.0.1*.
 
