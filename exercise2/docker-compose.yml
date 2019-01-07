@@ -22,7 +22,7 @@ services:
       - postgres_db
 
   nginx:
-    image: nginx:1.15.7-alpine
+    image: nginx:1.15.8-alpine
     ports:
       - 80:80
     volumes:
