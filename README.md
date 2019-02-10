@@ -2,21 +2,21 @@
 
 This repository stores a code test compose of two exercises to demonstrate skills mainly with [Python], [Django], [Gunicorn], [NGINX], [PostgreSQL], [Docker], [Jupyter Notebook], [microservices] and [REST API].
 
-* [DEPENDENCIES](#dependencies)
-* [CODE TEST CONTENT](#code-test-content)
-* [EXERCISE 1: PYTHON](#exercise-1-python)
-  * [EXERCISE 1 REQUIREMENTS](#exercise-1-requirements)
-  * [EXERCISE 1 NOTES](#exercise-1-notes)
-  * [EXERCISE 1 FOLDER CONTENT](#exercise-1-folder-content)
-  * [HOW TO RUN EXERCISE 1](#how-to-run-exercise-1)
-* [EXERCISE 2: DATA & API TEST](#exercise-2-data--api-test)
-  * [EXERCISE 2 REQUIREMENTS](#exercise-2-requirements)
-  * [EXERCISE 2 NOTES](#exercise-2-notes)
-  * [BONUS](#bonus)
-  * [EXERCISE 2 FOLDER CONTENT](#exercise-2-folder-content)
-  * [EXERCISE 2 ARCHITECTURE](#exercise-2-architecture)
-  * [HOW TO RUN EXERCISE 2 **WITH DOCKER COMPOSE**](#how-to-run-exercise-2-with-docker-compose)
-  * [HOW TO RUN EXERCISE 2 **WITHOUT DOCKER COMPOSE**](#how-to-run-exercise-2-without-docker-compose)
+- [DEPENDENCIES](#dependencies)
+- [CODE TEST CONTENT](#code-test-content)
+- [EXERCISE 1: PYTHON](#exercise-1-python)
+  - [EXERCISE 1 REQUIREMENTS](#exercise-1-requirements)
+  - [EXERCISE 1 NOTES](#exercise-1-notes)
+  - [EXERCISE 1 FOLDER CONTENT](#exercise-1-folder-content)
+  - [HOW TO RUN EXERCISE 1](#how-to-run-exercise-1)
+- [EXERCISE 2: DATA & API TEST](#exercise-2-data--api-test)
+  - [EXERCISE 2 REQUIREMENTS](#exercise-2-requirements)
+  - [EXERCISE 2 NOTES](#exercise-2-notes)
+  - [BONUS](#bonus)
+  - [EXERCISE 2 FOLDER CONTENT](#exercise-2-folder-content)
+  - [EXERCISE 2 ARCHITECTURE](#exercise-2-architecture)
+  - [HOW TO RUN EXERCISE 2 **WITH DOCKER COMPOSE**](#how-to-run-exercise-2-with-docker-compose)
+  - [HOW TO RUN EXERCISE 2 **WITHOUT DOCKER COMPOSE**](#how-to-run-exercise-2-without-docker-compose)
 
 ## DEPENDENCIES
 
@@ -27,9 +27,9 @@ The code has been tested using:
 * [Gunicorn] (19.9.0): a [Python] [WSGI] HTTP Server for UNIX.
 * [NGINX] (1.15.8): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
 * [PostgreSQL] (11.1): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
-* [Docker] (18.09.0-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
+* [Docker] (18.09.1-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
 * [Docker-Compose] (1.23.2): a tool for defining and running multi-container [Docker] applications.
-* [Conda] (4.5.12): a package and virtual environment manager included in [Python] Data Science Platform [Anaconda].
+* [Conda] (4.6.2): a package and virtual environment manager included in [Python] Data Science Platform [Anaconda].
 
 Virtual environment (<env_name>=**codetest36**) can be generated with **codetest36.yaml**, **requirements.txt** files found in codetest main folder.
 
@@ -37,7 +37,7 @@ Command to configure virtual environment with [Conda]:
 
 ```bash
 ~/codetest$ conda env create -f codetest36.yaml
-~/codetest$ source activate codetest36
+~/codetest$ conda activate codetest36
 (codetest36)~/codetest$
 ```
 
