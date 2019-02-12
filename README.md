@@ -23,7 +23,7 @@ This repository stores a code test compose of two exercises to demonstrate skill
 The code has been tested using:
 
 * [Python] (3.6.8): an interpreted high-level programming language for general-purpose programming.
-* [Django] (2.1.5): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
+* [Django] (2.1.7): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
 * [Gunicorn] (19.9.0): a [Python] [WSGI] HTTP Server for UNIX.
 * [NGINX] (1.15.8): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
 * [PostgreSQL] (11.1): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
