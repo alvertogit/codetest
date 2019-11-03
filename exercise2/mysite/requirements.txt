@@ -3,7 +3,7 @@ cached-property==1.5.1
 certifi==2019.3.9
 chardet==3.0.4
 decorator==4.4.0
-Django==2.2.1
+Django==2.2.4
 django-url-filter==0.3.12
 djangorestframework==3.9.4
 docutils==0.14
