@@ -22,31 +22,31 @@ This repository stores a code test compose of two exercises to demonstrate skill
 
 The code has been tested using:
 
-* [Python] (3.6.8): an interpreted high-level programming language for general-purpose programming.
-* [Django] (2.2.1): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
+* [Python] (3.7.5): an interpreted high-level programming language for general-purpose programming.
+* [Django] (2.2.6): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
 * [Gunicorn] (19.9.0): a [Python] [WSGI] HTTP Server for UNIX.
-* [NGINX] (1.15.12): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
-* [PostgreSQL] (11.3): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
-* [Docker] (18.09.6-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
-* [Docker-Compose] (1.24.0): a tool for defining and running multi-container [Docker] applications.
-* [Conda] (4.6.14): a package and virtual environment manager included in [Python] Data Science Platform [Anaconda].
+* [NGINX] (1.17.5): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
+* [PostgreSQL] (12.0): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
+* [Docker] (19.03.4-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
+* [Docker-Compose] (1.24.1): a tool for defining and running multi-container [Docker] applications.
+* [Conda] (4.7.12): a package and virtual environment manager included in [Python] Data Science Platform [Anaconda].
 
-Virtual environment (<env_name>=**codetest36**) can be generated with **codetest36.yaml**, **requirements.txt** files found in codetest main folder.
+Virtual environment (<env_name>=**codetest37**) can be generated with **codetest37.yaml**, **requirements.txt** files found in codetest main folder.
 
 Command to configure virtual environment with [Conda]:
 
 ```bash
-~/codetest$ conda env create -f codetest36.yaml
-~/codetest$ conda activate codetest36
-(codetest36)~/codetest$
+~/codetest$ conda env create -f codetest37.yaml
+~/codetest$ conda activate codetest37
+(codetest37)~/codetest$
 ```
 
 Command to configure virtual environment with [virtualenv]:
 
 ```bash
-~/codetest$ virtualenv codetest36
-~/codetest$ source codetest36/bin/activate
-(codetest36)~/codetest$ pip install -r requirements.txt
+~/codetest$ virtualenv codetest37
+~/codetest$ source codetest37/bin/activate
+(codetest37)~/codetest$ pip install -r requirements.txt
 ```
 
 ## CODE TEST CONTENT
@@ -55,7 +55,7 @@ Codetest main folder contains two folders for Exercise 1 and Exercise 2.
 
 ```bash
 codetest
-├── codetest36.yaml
+├── codetest37.yaml
 ├── exercise1
 ├── exercise2
 ├── images
@@ -422,25 +422,25 @@ The user and the database can be created with the following commands from shell.
 If it is not already done then create and activate the virtual environment (example with [Conda]):
 
 ```bash
-~/codetest$ conda env create -f codetest36.yaml
-~/codetest$ source activate codetest36
-(codetest36)~/codetest$
+~/codetest$ conda env create -f codetest37.yaml
+~/codetest$ source activate codetest37
+(codetest37)~/codetest$
 ```
 
 Load .env file.
 
 ```bash
-(codetest36)~/codetest/exercise2$ export $(grep -v '^#' .env | xargs -d '\n')
+(codetest37)~/codetest/exercise2$ export $(grep -v '^#' .env | xargs -d '\n')
 ```
 
 The next step consists in executing the following commands to prepare the [Django]'s **products** app.
 
 ```bash
-(codetest36)~/codetest/exercise2/mysite$ python manage.py migrate
+(codetest37)~/codetest/exercise2/mysite$ python manage.py migrate
 ...
-(codetest36)~/codetest/exercise2/mysite$ python manage.py makemigrations products
+(codetest37)~/codetest/exercise2/mysite$ python manage.py makemigrations products
 ...
-(codetest36)~/codetest/exercise2/mysite$ python manage.py sqlmigrate products 0001
+(codetest37)~/codetest/exercise2/mysite$ python manage.py sqlmigrate products 0001
 BEGIN;
 --
 -- Create model Product
@@ -461,22 +461,22 @@ In [2]: print(settings.BASE_DIR)
 To import the database **codetest.sql** file containing the table **products_product** with all products to [postgreSQL] it is necessary to execute:
 
 ```bash
-(codetest36)~/codetest/exercise2/postgresql$ cp codetest.sql /tmp
-(codetest36)~/codetest/exercise2/postgresql$ sudo -u postgres psql codetest < '/tmp/codetest.sql'
+(codetest37)~/codetest/exercise2/postgresql$ cp codetest.sql /tmp
+(codetest37)~/codetest/exercise2/postgresql$ sudo -u postgres psql codetest < '/tmp/codetest.sql'
 ```
 
 The **codetest.sql** file was created after running the importer to insert data from **test.xml** file to [postgreSQL] **products_product** table.
 
 ```bash
-(codetest36)~/codetest/exercise2/postgresql$ python importer.py
-(codetest36)~/codetest/exercise2/postgresql$ pg_dump -U postgres codetest -h localhost > /tmp/codetest.sql
-(codetest36)~/codetest/exercise2/postgresql$ cp /tmp/codetest.sql codetest.sql
+(codetest37)~/codetest/exercise2/postgresql$ python importer.py
+(codetest37)~/codetest/exercise2/postgresql$ pg_dump -U postgres codetest -h localhost > /tmp/codetest.sql
+(codetest37)~/codetest/exercise2/postgresql$ cp /tmp/codetest.sql codetest.sql
 ```
 
 Now it is possible to launch the server with [Django]'s **products** app.
 
 ```bash
-(codetest36)~/codetest/exercise2/mysite$ python manage.py runserver 8000
+(codetest37)~/codetest/exercise2/mysite$ python manage.py runserver 8000
 ```
 
 Now it is possible to open a web browser and paste the URL as described in the previous paragraph to check that the server is running fine.
