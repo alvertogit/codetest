@@ -3,7 +3,7 @@ cached-property==1.5.1
 certifi==2019.9.11
 chardet==3.0.4
 decorator==4.4.1
-Django==2.2.6
+Django==2.2.8
 django-url-filter==0.3.14
 djangorestframework==3.10.3
 enum-compat==0.0.3
