@@ -22,29 +22,28 @@ This repository stores a code test compose of two exercises to demonstrate skill
 
 The code has been tested using:
 
-* [Python] (3.7.5): an interpreted high-level programming language for general-purpose programming.
-* [Django] (2.2.6): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
-* [Gunicorn] (19.9.0): a [Python] [WSGI] HTTP Server for UNIX.
-* [NGINX] (1.17.5): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
-* [PostgreSQL] (12.0): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
-* [Docker] (19.03.4-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
-* [Docker-Compose] (1.24.1): a tool for defining and running multi-container [Docker] applications.
-* [Conda] (4.7.12): a package and virtual environment manager included in [Python] Data Science Platform [Anaconda].
+* [Python] (3.7.6): an interpreted high-level programming language for general-purpose programming.
+* [Django] (3.0.2): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
+* [Gunicorn] (20.0.4): a [Python] [WSGI] HTTP Server for UNIX.
+* [NGINX] (1.17.7): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
+* [PostgreSQL] (12.1): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
+* [Docker] (19.03.5-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
+* [Docker-Compose] (1.25.1): a tool for defining and running multi-container [Docker] applications.
 
-Virtual environment (<env_name>=**codetest37**) can be generated with **codetest37.yaml**, **requirements.txt** files found in codetest main folder.
+Virtual environment (<env_name>=**codetest37**) can be generated with **requirements.txt** file found in codetest main folder.
 
-Command to configure virtual environment with [Conda]:
+Command to configure virtual environment with [venv]:
 
 ```bash
-~/codetest$ conda env create -f codetest37.yaml
-~/codetest$ conda activate codetest37
-(codetest37)~/codetest$
+~/codetest$ python -m venv codetest37
+~/codetest$ source codetest37/bin/activate
+(codetest37)~/codetest$ pip install -r requirements.txt
 ```
 
 Command to configure virtual environment with [virtualenv]:
 
 ```bash
-~/codetest$ virtualenv codetest37
+~/codetest$ ~/codetest$ virtualenv codetest37
 ~/codetest$ source codetest37/bin/activate
 (codetest37)~/codetest$ pip install -r requirements.txt
 ```
@@ -55,7 +54,6 @@ Codetest main folder contains two folders for Exercise 1 and Exercise 2.
 
 ```bash
 codetest
-├── codetest37.yaml
 ├── exercise1
 ├── exercise2
 ├── images
@@ -105,13 +103,13 @@ exercise1
 The way to run Exercise 1 is simple. Just go to **exercise1** folder and execute:
 
 ```bash
-~/codetest/exercise1$ python main.py
+(codetest37)~/codetest/exercise1$ python main.py
 ```
 
-A good way to play with the **translate** and **translate_regex** functions is through a [Jupyter Notebook]. One notebook is stored in the same **exercise1** folder, to run it use the command shown below:
+A good way to play with the **translate** and **translate_regex** functions is through a [Jupyter Lab]. One notebook is stored in the same **exercise1** folder, to run it use the command shown below:
 
 ```bash
-~/codetest/exercise1$ jupyter notebook Exercise1.ipynb
+(codetest37)~/codetest/exercise1$ jupyter lab Exercise1.ipynb
 ```
 
 ![Jupyter notebook translate function](images/jupyter_notebook_translate_function.png)
@@ -419,15 +417,7 @@ The user and the database can be created with the following commands from shell.
 ~$ sudo -u postgres bash -c "psql -c \"CREATE DATABASE codetest WITH OWNER codetest;\""
 ```
 
-If it is not already done then create and activate the virtual environment (example with [Conda]):
-
-```bash
-~/codetest$ conda env create -f codetest37.yaml
-~/codetest$ source activate codetest37
-(codetest37)~/codetest$
-```
-
-Load .env file.
+Load .env file with activated virtual environment (codetest37).
 
 ```bash
 (codetest37)~/codetest/exercise2$ export $(grep -v '^#' .env | xargs -d '\n')
@@ -495,7 +485,7 @@ http://127.0.0.1:8000/products/
 [microservices]: https://en.wikipedia.org/wiki/Microservices
 [REST API]: https://en.wikipedia.org/wiki/Representational_state_transfer
 [Docker-Compose]: https://github.com/docker/compose
-[Conda]: https://conda.io/docs/index.html
-[Anaconda]: https://www.anaconda.com/
+[venv]: https://docs.python.org/3/library/venv.html
 [virtualenv]: https://virtualenv.pypa.io/en/stable/
+[Jupyter Lab]: http://jupyter.org/
 [Jupyter Notebook]: http://jupyter.org/
