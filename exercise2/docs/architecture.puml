@@ -1,0 +1,17 @@
+@startuml
+title Exercise 2 Architecture
+
+actor Client 
+rectangle NGINX
+rectangle web {
+rectangle Django
+ rectangle Gunicorn
+ 
+}
+database PostgreSQL
+
+Client <-> NGINX
+NGINX <-> Gunicorn : brigde
+Gunicorn <-> Django
+Django <-> PostgreSQL : brigde
+@enduml

@@ -56,7 +56,6 @@ Codetest main folder contains two folders for Exercise 1 and Exercise 2.
 codetest
 ├── exercise1
 ├── exercise2
-├── images
 ├── README.md
 └── requirements.txt
 ```
@@ -93,6 +92,7 @@ The **exercise1** folder contains three files:
 
 ```bash
 exercise1
+├── docs
 ├── Exercise1.ipynb
 ├── function.py
 └── main.py
@@ -112,7 +112,7 @@ A good way to play with the **translate** and **translate_regex** functions is t
 (codetest37)~/codetest/exercise1$ jupyter lab Exercise1.ipynb
 ```
 
-![Jupyter notebook translate function](images/jupyter_notebook_translate_function.png)
+![Jupyter notebook translate function](exercise1/docs/jupyter_notebook_translate_function.png)
 
 ## EXERCISE 2: DATA & API TEST
 
@@ -145,6 +145,7 @@ The **exercise2** folder contains:
 ```bash
 exercise2
 ├── docker-compose.yml
+├── docs
 ├── mysite
 │   ├── .env.example
 │   ├── Dockerfile
@@ -176,6 +177,8 @@ exercise2
 
 * **docker-compose.yml**: creates the [Django] and [postgreSQL] [Docker] containers in which the applications shall run.
 
+* **docs**: It stores Exercise 2 documentation.
+
 * **mysite**: It stores [Django]'s **products** app code.
 
 * **nginx**: It stores [NGINX]'s configuration.
@@ -192,13 +195,7 @@ The architecture created with [docker-compose] uses three different [Docker] con
 
 The following diagram illustrates the architecture in blocks:
 
-```bash
-            _______            ___________________            ____________
-           |       |          |                   |          |            |
- World <──>| NGINX ├<─bridge─>| Django + Gunicorn ├<─bridge─>| postgreSQL |
-           |       |          |                   |          |            |
-            ¯¯¯¯¯¯¯            ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯            ¯¯¯¯¯¯¯¯¯¯¯¯
-```
+![Exercise 2 Architecture](exercise2/docs/architecture.png)
 
 ### HOW TO RUN EXERCISE 2 **WITH DOCKER COMPOSE**
 
