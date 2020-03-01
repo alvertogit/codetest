@@ -23,11 +23,12 @@ This repository stores a code test compose of two exercises to demonstrate skill
 The code has been tested using:
 
 * [Python] (3.7.6): an interpreted high-level programming language for general-purpose programming.
+* [Jupyter Lab] (1.2.6): a web-based interactive development environment for [Jupyter Notebooks], code, and data.
 * [Django] (3.0.3): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
 * [Gunicorn] (20.0.4): a [Python] [WSGI] HTTP Server for UNIX.
 * [NGINX] (1.17.8): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
-* [PostgreSQL] (12.1): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
-* [Docker] (19.03.5-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
+* [PostgreSQL] (12.2): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
+* [Docker] (19.03.6-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
 * [Docker-Compose] (1.25.1): a tool for defining and running multi-container [Docker] applications.
 
 Virtual environment (<env_name>=**codetest37**) can be generated with **requirements.txt** file found in codetest main folder.
@@ -136,7 +137,7 @@ Write a small app that publish an [REST API] with these endpoints using data fro
 
 ### BONUS
 
-• Use [docker-compose] to setup and run the [Django]/[postgreSQL] app.
+• Use [docker-compose] to setup and run the [Django]/[PostgreSQL] app.
 
 ### EXERCISE 2 FOLDER CONTENT
 
@@ -175,7 +176,7 @@ exercise2
     └── test.xml
 ```
 
-* **docker-compose.yml**: creates the [Django] and [postgreSQL] [Docker] containers in which the applications shall run.
+* **docker-compose.yml**: creates the [Django] and [PostgreSQL] [Docker] containers in which the applications shall run.
 
 * **docs**: It stores Exercise 2 documentation.
 
@@ -183,7 +184,7 @@ exercise2
 
 * **nginx**: It stores [NGINX]'s configuration.
 
-* **postgresql**: It stores the **test.xml** with data to be inserted into [postgreSQL] and the **importer** app to do this process.
+* **postgresql**: It stores the **test.xml** with data to be inserted into [PostgreSQL] and the **importer** app to do this process.
 
 ### EXERCISE 2 ARCHITECTURE
 
@@ -191,7 +192,7 @@ The architecture created with [docker-compose] uses three different [Docker] con
 
 * [NGINX].
 * [Django] and [Gunicorn].
-* [postgreSQL].
+* [PostgreSQL].
 
 The following diagram illustrates the architecture in blocks:
 
@@ -401,11 +402,11 @@ Vary: Accept
 
 ### HOW TO RUN EXERCISE 2 **WITHOUT DOCKER COMPOSE**
 
-Please note that this procedure requires having a running [postgreSQL] database accesible locally through 5432 port on your system. [Django] is used directly without employing [NGINX] or [Gunicorn].
+Please note that this procedure requires having a running [PostgreSQL] database accesible locally through 5432 port on your system. [Django] is used directly without employing [NGINX] or [Gunicorn].
 
 First create environment **.env** file using **.env.example** file as template inside **mysite** folder. Make sure that *POSTGRES_HOST=postgres_db* line is commented in **.env** or assign the value to *POSTGRES_HOST=127.0.0.1*.
 
-As next step to be able to run Exercise 2 is mandatory to create in [postgreSQL] an user called *'codetest'* with password *'codetest'* and a database *'codetest'*.
+As next step to be able to run Exercise 2 is mandatory to create in [PostgreSQL] an user called *'codetest'* with password *'codetest'* and a database *'codetest'*.
 
 The user and the database can be created with the following commands from shell.
 
@@ -445,14 +446,14 @@ In [2]: print(settings.BASE_DIR)
 /mysite
 ```
 
-To import the database **codetest.sql** file containing the table **products_product** with all products to [postgreSQL] it is necessary to execute:
+To import the database **codetest.sql** file containing the table **products_product** with all products to [PostgreSQL] it is necessary to execute:
 
 ```bash
 (codetest37)~/codetest/exercise2/postgresql$ cp codetest.sql /tmp
 (codetest37)~/codetest/exercise2/postgresql$ sudo -u postgres psql codetest < '/tmp/codetest.sql'
 ```
 
-The **codetest.sql** file was created after running the importer to insert data from **test.xml** file to [postgreSQL] **products_product** table.
+The **codetest.sql** file was created after running the importer to insert data from **test.xml** file to [PostgreSQL] **products_product** table.
 
 ```bash
 (codetest37)~/codetest/exercise2/postgresql$ python importer.py
@@ -486,3 +487,4 @@ http://127.0.0.1:8000/products/
 [virtualenv]: https://virtualenv.pypa.io/en/stable/
 [Jupyter Lab]: http://jupyter.org/
 [Jupyter Notebook]: http://jupyter.org/
+[Jupyter Notebooks]: http://jupyter.org/
