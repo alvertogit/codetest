@@ -22,14 +22,14 @@ This repository stores a code test compose of two exercises to demonstrate skill
 
 The code has been tested using:
 
-* [Python] (3.7.6): an interpreted high-level programming language for general-purpose programming.
-* [Jupyter Lab] (1.2.6): a web-based interactive development environment for [Jupyter Notebooks], code, and data.
-* [Django] (3.0.3): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
+* [Python] (3.7.7): an interpreted high-level programming language for general-purpose programming.
+* [Jupyter Lab] (2.0.1): a web-based interactive development environment for [Jupyter Notebooks], code, and data.
+* [Django] (3.0.4): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
 * [Gunicorn] (20.0.4): a [Python] [WSGI] HTTP Server for UNIX.
-* [NGINX] (1.17.8): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
+* [NGINX] (1.17.9): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
 * [PostgreSQL] (12.2): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
-* [Docker] (19.03.6-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
-* [Docker-Compose] (1.25.1): a tool for defining and running multi-container [Docker] applications.
+* [Docker] (19.03.8-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
+* [Docker-Compose] (1.25.4): a tool for defining and running multi-container [Docker] applications.
 
 Virtual environment (<env_name>=**codetest37**) can be generated with **requirements.txt** file found in codetest main folder.
 
