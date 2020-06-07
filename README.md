@@ -23,12 +23,12 @@ This repository stores a code test compose of two exercises to demonstrate skill
 The code has been tested using:
 
 * [Python] (3.7.7): an interpreted high-level programming language for general-purpose programming.
-* [Jupyter Lab] (2.1.2): a web-based interactive development environment for [Jupyter Notebooks], code, and data.
-* [Django] (3.0.6): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
+* [Jupyter Lab] (2.1.4): a web-based interactive development environment for [Jupyter Notebooks], code and data.
+* [Django] (3.0.7): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
 * [Gunicorn] (20.0.4): a [Python] [WSGI] HTTP Server for UNIX.
-* [NGINX] (1.18.0): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
-* [PostgreSQL] (12.2): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
-* [Docker] (19.03.8-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
+* [NGINX] (1.19.0): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
+* [PostgreSQL] (12.3): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
+* [Docker] (19.03.11-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
 * [Docker-Compose] (1.25.5): a tool for defining and running multi-container [Docker] applications.
 
 Virtual environment (<env_name>=**codetest37**) can be generated with **requirements.txt** file found in codetest main folder.
@@ -38,8 +38,8 @@ Command to configure virtual environment with [venv]:
 ```bash
 ~/codetest$ python -m venv codetest37
 ~/codetest$ source codetest37/bin/activate
-(codetest37)~/codetest$ pip install pip==20.1
-(codetest37)~/codetest$ pip install setuptools==46.1.3
+(codetest37)~/codetest$ pip install pip==20.1.1
+(codetest37)~/codetest$ pip install setuptools==47.1.1
 (codetest37)~/codetest$ pip install -r requirements.txt
 ```
 
@@ -48,8 +48,8 @@ Command to configure virtual environment with [virtualenv]:
 ```bash
 ~/codetest$ ~/codetest$ virtualenv codetest37
 ~/codetest$ source codetest37/bin/activate
-(codetest37)~/codetest$ pip install pip==20.1
-(codetest37)~/codetest$ pip install setuptools==46.1.3
+(codetest37)~/codetest$ pip install pip==20.1.1
+(codetest37)~/codetest$ pip install setuptools==47.1.1
 (codetest37)~/codetest$ pip install -r requirements.txt
 ```
 
@@ -236,7 +236,7 @@ If this happens simply press 'Control+C', wait patiently to return to shell and 
 postgres_db_1_81cb47c30feg | 2018-12-11 09:59:27.670 UTC [1] LOG:  database system is ready to accept connections
 ```
 
-There are different ways to check that the server is running properly. One is opening a web browser such as Chrome or Mozilla and paste the following URL:
+There are different ways to check that the server is running properly. One is opening a web browser such as Chrome or Firefox and paste the following URL:
 
 ```bash
 http://127.0.0.1/products/
