@@ -5,7 +5,7 @@ main.py: It executes translate function examples for Exercise 1.
 '''
 
 __author__      = "alvertogit"
-__copyright__   = "Copyright 2018"
+__copyright__   = "Copyright 2018-2020"
 
 from function import translate, translate_regex
 
