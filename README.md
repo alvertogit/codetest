@@ -17,6 +17,7 @@ This repository stores a code test compose of two exercises to demonstrate skill
   - [EXERCISE 2 ARCHITECTURE](#exercise-2-architecture)
   - [HOW TO RUN EXERCISE 2 **WITH DOCKER COMPOSE**](#how-to-run-exercise-2-with-docker-compose)
   - [HOW TO RUN EXERCISE 2 **WITHOUT DOCKER COMPOSE**](#how-to-run-exercise-2-without-docker-compose)
+- [CREDITS](#credits)
 
 ## DEPENDENCIES
 
@@ -476,6 +477,11 @@ Now it is possible to open a web browser and paste the URL as described in the p
 ```bash
 http://127.0.0.1:8000/products/
 ```
+
+## CREDITS
+
+author: alvertogit
+copyright: 2018-2020
 
 [Python]: https://www.python.org/
 [Django]: https://www.djangoproject.com/
