@@ -1,4 +1,4 @@
-FROM python:3.7.7-slim-stretch
+FROM python:3.7.8-slim-buster
 ENV PYTHONUNBUFFERED 1
 RUN apt-get update \
     && apt-get install -y make \
@@ -8,8 +8,8 @@ RUN mkdir -p /mysite
 COPY . /mysite
 WORKDIR /mysite
 RUN python -m venv .
-RUN pip install pip==20.1.1
-RUN pip install setuptools==47.1.1
+RUN pip install pip==20.2.2
+RUN pip install setuptools==49.6.0
 RUN pip install --no-cache-dir -r requirements.txt
 RUN export $(grep -v '^#' .env | xargs -d '\n') && python manage.py collectstatic --no-input
 EXPOSE 8000
