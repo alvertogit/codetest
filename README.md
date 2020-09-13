@@ -23,14 +23,14 @@ This repository stores a code test compose of two exercises to demonstrate skill
 
 The code has been tested using:
 
-* [Python] (3.7.8): an interpreted high-level programming language for general-purpose programming.
-* [Jupyter Lab] (2.2.4): a web-based interactive development environment for [Jupyter Notebooks], code and data.
-* [Django] (3.1): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
+* [Python] (3.7.9): an interpreted high-level programming language for general-purpose programming.
+* [Jupyter Lab] (2.2.7): a web-based interactive development environment for [Jupyter Notebooks], code and data.
+* [Django] (3.1.1): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
 * [Gunicorn] (20.0.4): a [Python] [WSGI] HTTP Server for UNIX.
 * [NGINX] (1.19.2): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
-* [PostgreSQL] (12.3): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
+* [PostgreSQL] (12.4): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
 * [Docker] (19.03.12-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
-* [Docker-Compose] (1.25.5): a tool for defining and running multi-container [Docker] applications.
+* [Docker-Compose] (1.27.2): a tool for defining and running multi-container [Docker] applications.
 
 Virtual environment (<env_name>=**codetest37**) can be generated with **requirements.txt** file found in codetest main folder.
 
@@ -39,8 +39,8 @@ Command to configure virtual environment with [venv]:
 ```bash
 ~/codetest$ python -m venv codetest37
 ~/codetest$ source codetest37/bin/activate
-(codetest37)~/codetest$ pip install pip==20.2.2
-(codetest37)~/codetest$ pip install setuptools==49.6.0
+(codetest37)~/codetest$ pip install pip==20.2.3
+(codetest37)~/codetest$ pip install setuptools==50.3.0
 (codetest37)~/codetest$ pip install -r requirements.txt
 ```
 
@@ -49,8 +49,8 @@ Command to configure virtual environment with [virtualenv]:
 ```bash
 ~/codetest$ ~/codetest$ virtualenv codetest37
 ~/codetest$ source codetest37/bin/activate
-(codetest37)~/codetest$ pip install pip==20.2.2
-(codetest37)~/codetest$ pip install setuptools==49.6.0
+(codetest37)~/codetest$ pip install pip==20.2.3
+(codetest37)~/codetest$ pip install setuptools==50.3.0
 (codetest37)~/codetest$ pip install -r requirements.txt
 ```
 
