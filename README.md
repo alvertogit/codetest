@@ -23,35 +23,35 @@ This repository stores a code test compose of two exercises to demonstrate skill
 
 The code has been tested using:
 
-* [Python] (3.7.9): an interpreted high-level programming language for general-purpose programming.
-* [Jupyter Lab] (2.2.7): a web-based interactive development environment for [Jupyter Notebooks], code and data.
-* [Django] (3.1.1): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
+* [Python] (3.8): an interpreted high-level programming language for general-purpose programming.
+* [Jupyter Lab] (2.2.9): a web-based interactive development environment for [Jupyter Notebooks], code and data.
+* [Django] (3.1.4): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
 * [Gunicorn] (20.0.4): a [Python] [WSGI] HTTP Server for UNIX.
-* [NGINX] (1.19.2): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
-* [PostgreSQL] (12.4): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
-* [Docker] (19.03.12-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
-* [Docker-Compose] (1.27.2): a tool for defining and running multi-container [Docker] applications.
+* [NGINX] (1.19.5): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
+* [PostgreSQL] (13.1): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
+* [Docker] (19.03.13-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
+* [Docker-Compose] (1.27.4): a tool for defining and running multi-container [Docker] applications.
 
-Virtual environment (<env_name>=**codetest37**) can be generated with **requirements.txt** file found in codetest main folder.
+Virtual environment (<env_name>=**codetest38**) can be generated with **requirements.txt** file found in codetest main folder.
 
 Command to configure virtual environment with [venv]:
 
 ```bash
-~/codetest$ python -m venv codetest37
-~/codetest$ source codetest37/bin/activate
-(codetest37)~/codetest$ pip install pip==20.2.3
-(codetest37)~/codetest$ pip install setuptools==50.3.0
-(codetest37)~/codetest$ pip install -r requirements.txt
+~/codetest$ python -m venv codetest38
+~/codetest$ source codetest38/bin/activate
+(codetest38)~/codetest$ pip install pip==20.2.4
+(codetest38)~/codetest$ pip install setuptools==51.0.0
+(codetest38)~/codetest$ pip install -r requirements.txt
 ```
 
 Command to configure virtual environment with [virtualenv]:
 
 ```bash
-~/codetest$ ~/codetest$ virtualenv codetest37
-~/codetest$ source codetest37/bin/activate
-(codetest37)~/codetest$ pip install pip==20.2.3
-(codetest37)~/codetest$ pip install setuptools==50.3.0
-(codetest37)~/codetest$ pip install -r requirements.txt
+~/codetest$ ~/codetest$ virtualenv codetest38
+~/codetest$ source codetest38/bin/activate
+(codetest38)~/codetest$ pip install pip==20.2.4
+(codetest38)~/codetest$ pip install setuptools==51.0.0
+(codetest38)~/codetest$ pip install -r requirements.txt
 ```
 
 ## CODE TEST CONTENT
@@ -109,13 +109,13 @@ exercise1
 The way to run Exercise 1 is simple. Just go to **exercise1** folder and execute:
 
 ```bash
-(codetest37)~/codetest/exercise1$ python main.py
+(codetest38)~/codetest/exercise1$ python main.py
 ```
 
 A good way to play with the **translate** and **translate_regex** functions is through a [Jupyter Lab]. One notebook is stored in the same **exercise1** folder, to run it use the command shown below:
 
 ```bash
-(codetest37)~/codetest/exercise1$ jupyter lab Exercise1.ipynb
+(codetest38)~/codetest/exercise1$ jupyter lab Exercise1.ipynb
 ```
 
 ![Jupyter notebook translate function](exercise1/docs/jupyter_notebook_translate_function.png)
@@ -420,20 +420,20 @@ The user and the database can be created with the following commands from shell.
 ~$ sudo -u postgres bash -c "psql -c \"CREATE DATABASE codetest WITH OWNER codetest;\""
 ```
 
-Load .env file with activated virtual environment (codetest37).
+Load .env file with activated virtual environment (codetest38).
 
 ```bash
-(codetest37)~/codetest/exercise2$ export $(grep -v '^#' .env | xargs -d '\n')
+(codetest38)~/codetest/exercise2$ export $(grep -v '^#' .env | xargs -d '\n')
 ```
 
 The next step consists in executing the following commands to prepare the [Django]'s **products** app.
 
 ```bash
-(codetest37)~/codetest/exercise2/mysite$ python manage.py migrate
+(codetest38)~/codetest/exercise2/mysite$ python manage.py migrate
 ...
-(codetest37)~/codetest/exercise2/mysite$ python manage.py makemigrations products
+(codetest38)~/codetest/exercise2/mysite$ python manage.py makemigrations products
 ...
-(codetest37)~/codetest/exercise2/mysite$ python manage.py sqlmigrate products 0001
+(codetest38)~/codetest/exercise2/mysite$ python manage.py sqlmigrate products 0001
 BEGIN;
 --
 -- Create model Product
@@ -454,22 +454,22 @@ In [2]: print(settings.BASE_DIR)
 To import the database **codetest.sql** file containing the table **products_product** with all products to [PostgreSQL] it is necessary to execute:
 
 ```bash
-(codetest37)~/codetest/exercise2/postgresql$ cp codetest.sql /tmp
-(codetest37)~/codetest/exercise2/postgresql$ sudo -u postgres psql codetest < '/tmp/codetest.sql'
+(codetest38)~/codetest/exercise2/postgresql$ cp codetest.sql /tmp
+(codetest38)~/codetest/exercise2/postgresql$ sudo -u postgres psql codetest < '/tmp/codetest.sql'
 ```
 
 The **codetest.sql** file was created after running the importer to insert data from **test.xml** file to [PostgreSQL] **products_product** table.
 
 ```bash
-(codetest37)~/codetest/exercise2/postgresql$ python importer.py
-(codetest37)~/codetest/exercise2/postgresql$ pg_dump -U postgres codetest -h localhost > /tmp/codetest.sql
-(codetest37)~/codetest/exercise2/postgresql$ cp /tmp/codetest.sql codetest.sql
+(codetest38)~/codetest/exercise2/postgresql$ python importer.py
+(codetest38)~/codetest/exercise2/postgresql$ pg_dump -U postgres codetest -h localhost > /tmp/codetest.sql
+(codetest38)~/codetest/exercise2/postgresql$ cp /tmp/codetest.sql codetest.sql
 ```
 
 Now it is possible to launch the server with [Django]'s **products** app.
 
 ```bash
-(codetest37)~/codetest/exercise2/mysite$ python manage.py runserver 8000
+(codetest38)~/codetest/exercise2/mysite$ python manage.py runserver 8000
 ```
 
 Now it is possible to open a web browser and paste the URL as described in the previous paragraph to check that the server is running fine.
@@ -495,6 +495,6 @@ copyright: 2018-2020
 [Docker-Compose]: https://github.com/docker/compose
 [venv]: https://docs.python.org/3/library/venv.html
 [virtualenv]: https://virtualenv.pypa.io/en/stable/
-[Jupyter Lab]: http://jupyter.org/
-[Jupyter Notebook]: http://jupyter.org/
-[Jupyter Notebooks]: http://jupyter.org/
+[Jupyter Lab]: https://jupyter.org/
+[Jupyter Notebook]: https://jupyter.org/
+[Jupyter Notebooks]: https://jupyter.org/
