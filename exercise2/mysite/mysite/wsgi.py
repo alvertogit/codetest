@@ -7,6 +7,9 @@ For more information on this file, see
 https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/
 """
 
+__author__      = "alvertogit"
+__copyright__   = "Copyright 2018-2021"
+
 import os
 
 from django.core.wsgi import get_wsgi_application

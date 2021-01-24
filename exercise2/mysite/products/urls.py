@@ -1,3 +1,6 @@
+__author__      = "alvertogit"
+__copyright__   = "Copyright 2018-2021"
+
 from django.conf.urls import url, include
 from rest_framework import routers
 from . import views

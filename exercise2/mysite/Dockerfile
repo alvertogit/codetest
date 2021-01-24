@@ -8,8 +8,8 @@ RUN mkdir -p /mysite
 COPY . /mysite
 WORKDIR /mysite
 RUN python -m venv .
-RUN pip install pip==20.2.4
-RUN pip install setuptools==51.0.0
+RUN pip install pip==20.3.3
+RUN pip install setuptools==51.3.3
 RUN pip install --no-cache-dir -r requirements.txt
 RUN export $(grep -v '^#' .env | xargs -d '\n') && python manage.py collectstatic --no-input
 EXPOSE 8000
