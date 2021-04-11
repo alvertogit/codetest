@@ -24,13 +24,13 @@ This repository stores a code test compose of two exercises to demonstrate skill
 The code has been tested using:
 
 * [Python] (3.8): an interpreted high-level programming language for general-purpose programming.
-* [Jupyter Lab] (3.0.12): a web-based interactive development environment for [Jupyter Notebooks], code and data.
-* [Django] (3.1.7): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
-* [Gunicorn] (20.0.4): a [Python] [WSGI] HTTP Server for UNIX.
-* [NGINX] (1.19.8): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
+* [Jupyter Lab] (3.0.13): a web-based interactive development environment for [Jupyter Notebooks], code and data.
+* [Django] (3.2): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
+* [Gunicorn] (20.1.0): a [Python] [WSGI] HTTP Server for UNIX.
+* [NGINX] (1.19.9): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
 * [PostgreSQL] (13.2): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
 * [Docker] (19.03.13-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
-* [Docker-Compose] (1.28.5): a tool for defining and running multi-container [Docker] applications.
+* [Docker-Compose] (1.29.0): a tool for defining and running multi-container [Docker] applications.
 
 Virtual environment (<env_name>=**codetest38**) can be generated with **requirements.txt** file found in codetest main folder.
 
@@ -40,7 +40,7 @@ Command to configure virtual environment with [venv]:
 ~/codetest$ python -m venv codetest38
 ~/codetest$ source codetest38/bin/activate
 (codetest38)~/codetest$ pip install pip==21.0.1
-(codetest38)~/codetest$ pip install setuptools==54.1.2
+(codetest38)~/codetest$ pip install setuptools==56.0.0
 (codetest38)~/codetest$ pip install -r requirements.txt
 ```
 
