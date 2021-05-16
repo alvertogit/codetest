@@ -1,4 +1,4 @@
-FROM python:3.8.8-slim-buster
+FROM python:3.8.10-slim-buster
 ENV PYTHONUNBUFFERED 1
 RUN apt-get update \
     && apt-get install -y make \
@@ -7,10 +7,10 @@ RUN apt-get update \
 RUN mkdir -p /mysite
 COPY . /mysite
 WORKDIR /mysite
-RUN python -m venv .
-RUN pip install pip==21.0.1
-RUN pip install setuptools==56.0.0
-RUN pip install --no-cache-dir -r requirements.txt
+RUN python3 -m venv .
+RUN python3 -m pip install pip==21.1.1
+RUN python3 -m pip install setuptools==56.2.0
+RUN python3 -m pip install --no-cache-dir -r requirements.txt
 RUN export $(grep -v '^#' .env | xargs -d '\n') && python manage.py collectstatic --no-input
 EXPOSE 8000
 CMD ["gunicorn", "--bind", ":8000", "mysite.wsgi:application"]
