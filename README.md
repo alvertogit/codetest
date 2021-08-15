@@ -24,11 +24,11 @@ This repository stores a code test compose of two exercises to demonstrate skill
 The code has been tested using:
 
 * [Python] (3.8): an interpreted high-level programming language for general-purpose programming.
-* [Jupyter Lab] (3.0.16): a web-based interactive development environment for [Jupyter Notebooks], code and data.
-* [Django] (3.2.4): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
+* [Jupyter Lab] (3.1.6): a web-based interactive development environment for [Jupyter Notebooks], code and data.
+* [Django] (3.2.6): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
 * [Gunicorn] (20.1.0): a [Python] [WSGI] HTTP Server for UNIX.
-* [NGINX] (1.21.0): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
-* [PostgreSQL] (13.3): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
+* [NGINX] (1.21.1): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
+* [PostgreSQL] (13.4): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
 * [Docker] (19.03.13-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
 * [Docker-Compose] (1.29.2): a tool for defining and running multi-container [Docker] applications.
 
@@ -39,8 +39,8 @@ Command to configure virtual environment with [venv]:
 ```bash
 ~/codetest$ python3 -m venv codetest38
 ~/codetest$ source codetest38/bin/activate
-(codetest38)~/codetest$ python3 -m pip install pip==21.1.2
-(codetest38)~/codetest$ python3 -m pip install setuptools==57.0.0
+(codetest38)~/codetest$ python3 -m pip install pip==21.2.4
+(codetest38)~/codetest$ python3 -m pip install setuptools==57.4.0
 (codetest38)~/codetest$ python3 -m pip install -r requirements.txt
 ```
 
@@ -64,9 +64,9 @@ Write a small app that takes an integer and return a string representation of th
 groups of 3 digits. For example:
 
 ```python
-print translate (1234)
+print(translate(1234))
 '1,234'
-print translate (123456789)
+print(translate(123456789))
 '123,456,789'
 ```
 

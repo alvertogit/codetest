@@ -14,9 +14,9 @@ def translate (intValue):
     """Function translate takes an integer and return a string representation of 
     that integer with commas separating groups of 3 digits. For example:
 
-    print translate (1234)
+    print(translate(1234))
     '1,234'
-    print translate (123456789)
+    print(translate(123456789))
     '123,456,789'
 
     Args:
