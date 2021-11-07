@@ -24,8 +24,8 @@ This repository stores a code test compose of two exercises to demonstrate skill
 The code has been tested using:
 
 * [Python] (3.9): an interpreted high-level programming language for general-purpose programming.
-* [Jupyter Lab] (3.2.1): a web-based interactive development environment for [Jupyter Notebooks], code and data.
-* [Django] (3.2.8): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
+* [Jupyter Lab] (3.2.2): a web-based interactive development environment for [Jupyter Notebooks], code and data.
+* [Django] (3.2.9): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
 * [Gunicorn] (20.1.0): a [Python] [WSGI] HTTP Server for UNIX.
 * [NGINX] (1.21.3): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
 * [PostgreSQL] (14.0): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
@@ -40,7 +40,7 @@ Command to configure virtual environment with [venv]:
 ~/codetest$ python3 -m venv codetest39
 ~/codetest$ source codetest39/bin/activate
 (codetest39)~/codetest$ python3 -m pip install pip==21.3.1
-(codetest39)~/codetest$ python3 -m pip install setuptools==58.3.0
+(codetest39)~/codetest$ python3 -m pip install setuptools==58.5.3
 (codetest39)~/codetest$ python3 -m pip install -r requirements.txt
 ```
 
