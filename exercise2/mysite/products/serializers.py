@@ -1,5 +1,5 @@
 __author__      = "alvertogit"
-__copyright__   = "Copyright 2018-2021"
+__copyright__   = "Copyright 2018-2022"
 
 from rest_framework import serializers
 from .models import Product

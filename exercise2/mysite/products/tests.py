@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 __author__      = "alvertogit"
-__copyright__   = "Copyright 2018-2021"
+__copyright__   = "Copyright 2018-2022"
 
 from django.test import TestCase
 
