@@ -8,6 +8,7 @@ from django.db import models
 
 class Product(models.Model):
     # Only the most relevant fields from test.xml have been chosen
+    id = models.AutoField(primary_key=True)
     product_id = models.CharField(max_length=10)
     title = models.CharField(max_length=100)
     product_type = models.CharField(max_length=100)

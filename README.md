@@ -16,6 +16,7 @@ This repository stores a code test compose of two exercises to demonstrate skill
   - [EXERCISE 2 FOLDER CONTENT](#exercise-2-folder-content)
   - [EXERCISE 2 ARCHITECTURE](#exercise-2-architecture)
   - [HOW TO RUN EXERCISE 2 **WITH DOCKER COMPOSE**](#how-to-run-exercise-2-with-docker-compose)
+    - [TESTS](#tests)
   - [HOW TO RUN EXERCISE 2 **WITHOUT DOCKER COMPOSE**](#how-to-run-exercise-2-without-docker-compose)
 - [CREDITS](#credits)
 
@@ -394,6 +395,26 @@ Vary: Accept
     }
 ]
 ```
+
+#### TESTS
+
+To run tests execute inside web container the command to launch tests:
+
+```
+~/codetest/exercise2$ docker-compose exec web bash
+root@8800eecc88:/mysite# python manage.py test
+Found 6 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.056s
+
+OK
+Destroying test database for alias 'default'...
+
+```
+
 
 ### HOW TO RUN EXERCISE 2 **WITHOUT DOCKER COMPOSE**
 
