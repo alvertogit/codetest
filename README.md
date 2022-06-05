@@ -25,11 +25,11 @@ This repository stores a code test compose of two exercises to demonstrate skill
 The code has been tested using:
 
 * [Python] (3.10): an interpreted high-level programming language for general-purpose programming.
-* [Jupyter Lab] (3.3.4): a web-based interactive development environment for [Jupyter Notebooks], code and data.
-* [Django] (4.0.4): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
+* [Jupyter Lab] (3.4.2): a web-based interactive development environment for [Jupyter Notebooks], code and data.
+* [Django] (4.0.5): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
 * [Gunicorn] (20.1.0): a [Python] [WSGI] HTTP Server for UNIX.
-* [NGINX] (1.21.6): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
-* [PostgreSQL] (14.2): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
+* [NGINX] (1.22): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
+* [PostgreSQL] (14.3): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
 * [Docker] (19.03.13-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
 * [Docker-Compose] (1.29.2): a tool for defining and running multi-container [Docker] applications.
 
@@ -40,8 +40,8 @@ Command to configure virtual environment with [venv]:
 ```bash
 ~/codetest$ python3 -m venv codetest3
 ~/codetest$ source codetest3/bin/activate
-(codetest3)~/codetest$ python3 -m pip install pip==22.0.4
-(codetest3)~/codetest$ python3 -m pip install setuptools==62.1.0
+(codetest3)~/codetest$ python3 -m pip install pip==22.1.2
+(codetest3)~/codetest$ python3 -m pip install setuptools==62.3.2
 (codetest3)~/codetest$ python3 -m pip install -r requirements.txt
 ```
 
