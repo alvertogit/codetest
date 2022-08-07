@@ -1,4 +1,4 @@
-FROM python:3.10.4-slim-bullseye
+FROM python:3.10-slim-bullseye
 ENV PYTHONUNBUFFERED 1
 RUN apt-get update \
     && apt-get install -y make \
@@ -8,8 +8,8 @@ RUN mkdir -p /mysite
 COPY . /mysite
 WORKDIR /mysite
 RUN python3 -m venv .
-RUN python3 -m pip install pip==22.1.2
-RUN python3 -m pip install setuptools==62.3.2
+RUN python3 -m pip install pip==22.2.2
+RUN python3 -m pip install setuptools==63.4.1
 RUN python3 -m pip install --no-cache-dir -r requirements.txt
 RUN export $(grep -v '^#' .env | xargs -d '\n') && python manage.py collectstatic --no-input
 EXPOSE 8000
