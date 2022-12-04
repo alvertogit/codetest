@@ -9,7 +9,7 @@ This repository stores a code test compose of two exercises to demonstrate skill
   - [EXERCISE 1 NOTES](#exercise-1-notes)
   - [EXERCISE 1 FOLDER CONTENT](#exercise-1-folder-content)
   - [HOW TO RUN EXERCISE 1](#how-to-run-exercise-1)
-- [EXERCISE 2: DATA & API TEST](#exercise-2-data--api-test)
+- [EXERCISE 2: DATA \& API TEST](#exercise-2-data--api-test)
   - [EXERCISE 2 REQUIREMENTS](#exercise-2-requirements)
   - [EXERCISE 2 NOTES](#exercise-2-notes)
   - [BONUS](#bonus)
@@ -25,11 +25,11 @@ This repository stores a code test compose of two exercises to demonstrate skill
 The code has been tested using:
 
 * [Python] (3.10): an interpreted high-level programming language for general-purpose programming.
-* [Jupyter Lab] (3.4): a web-based interactive development environment for [Jupyter Notebooks], code and data.
+* [Jupyter Lab] (3.5): a web-based interactive development environment for [Jupyter Notebooks], code and data.
 * [Django] (4.1): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
 * [Gunicorn] (20.1.0): a [Python] [WSGI] HTTP Server for UNIX.
 * [NGINX] (1.23): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
-* [PostgreSQL] (14): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
+* [PostgreSQL] (15): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
 * [Docker] (19.03.13-ce): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
 * [Docker-Compose] (1.29.2): a tool for defining and running multi-container [Docker] applications.
 
@@ -40,8 +40,8 @@ Command to configure virtual environment with [venv]:
 ```bash
 ~/codetest$ python3 -m venv codetest3
 ~/codetest$ source codetest3/bin/activate
-(codetest3)~/codetest$ python3 -m pip install pip==22.2.2
-(codetest3)~/codetest$ python3 -m pip install setuptools==65.4.0
+(codetest3)~/codetest$ python3 -m pip install pip==22.3.1
+(codetest3)~/codetest$ python3 -m pip install setuptools==65.6.3
 (codetest3)~/codetest$ python3 -m pip install -r requirements.txt
 ```
 
