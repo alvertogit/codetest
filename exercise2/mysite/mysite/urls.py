@@ -15,7 +15,7 @@ Including another URLconf
 """
 
 __author__      = "alvertogit"
-__copyright__   = "Copyright 2018-2022"
+__copyright__   = "Copyright 2018-2023"
 
 from django.urls import include, re_path
 from django.contrib import admin
