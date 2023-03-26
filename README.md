@@ -31,7 +31,7 @@ The code has been tested using:
 * [NGINX] (1.23): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
 * [PostgreSQL] (15): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
 * [Docker] (20.10): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
-* [Docker-Compose] (1.29): a tool for defining and running multi-container [Docker] applications.
+* [Docker Compose] (2.16): a tool for defining and running multi-container [Docker] applications.
 
 Virtual environment (<env_name>=**codetest3**) can be generated with **requirements.txt** file found in codetest main folder.
 
@@ -40,8 +40,8 @@ Command to configure virtual environment with [venv]:
 ```bash
 ~/codetest$ python3 -m venv codetest3
 ~/codetest$ source codetest3/bin/activate
-(codetest3)~/codetest$ python3 -m pip install pip==23.0
-(codetest3)~/codetest$ python3 -m pip install setuptools==67.2.0
+(codetest3)~/codetest$ python3 -m pip install pip==23.0.1
+(codetest3)~/codetest$ python3 -m pip install setuptools==67.6.0
 (codetest3)~/codetest$ python3 -m pip install -r requirements.txt
 ```
 
@@ -133,7 +133,7 @@ Write a small app that publish an [REST API] with these endpoints using data fro
 
 ### BONUS
 
-• Use [docker-compose] to setup and run the [Django]/[PostgreSQL] app.
+• Use [Docker Compose] to setup and run the [Django]/[PostgreSQL] app.
 
 ### EXERCISE 2 FOLDER CONTENT
 
@@ -184,7 +184,7 @@ exercise2
 
 ### EXERCISE 2 ARCHITECTURE
 
-The architecture created with [docker-compose] uses three different [Docker] containers for:
+The architecture created with [Docker Compose] uses three different [Docker] containers for:
 
 * [NGINX].
 * [Django] and [Gunicorn].
@@ -204,20 +204,20 @@ flowchart LR;
 
 ### HOW TO RUN EXERCISE 2 **WITH DOCKER COMPOSE**
 
-The steps and commands to run Exercise 2 with [docker-compose] are described below.
+The steps and commands to run Exercise 2 with [Docker Compose] are described below.
 
 First create environment **.env** file using **.env.example** file as template inside **mysite** folder. Exercise 2 should run fine with default template settings.
 
-Then [docker-compose] can be executed to build services.
+Then [Docker Compose] can be executed to build services.
 
 ```bash
-~/codetest/exercise2$ docker-compose build
+~/codetest/exercise2$ docker compose build
 ```
 
-Next step consists in executing [docker-compose] up command.
+Next step consists in executing [Docker Compose] up command.
 
 ```bash
-~/codetest/exercise2$ docker-compose up
+~/codetest/exercise2$ docker compose up
 ```
 
 It is possible that for the first time the command keeps stopped at one point as shown below:
@@ -409,7 +409,7 @@ Vary: Accept
 To run tests execute inside web container the command to launch tests:
 
 ```
-~/codetest/exercise2$ docker-compose exec web bash
+~/codetest/exercise2$ docker compose exec web bash
 root@8800eecc88:/mysite# python manage.py test
 Found 6 test(s).
 Creating test database for alias 'default'...
@@ -511,7 +511,7 @@ copyright: 2018-2023
 [Docker]: https://www.docker.com/
 [microservices]: https://en.wikipedia.org/wiki/Microservices
 [REST API]: https://en.wikipedia.org/wiki/Representational_state_transfer
-[Docker-Compose]: https://github.com/docker/compose
+[Docker Compose]: https://github.com/docker/compose
 [venv]: https://docs.python.org/3/library/venv.html
 [Jupyter Lab]: https://jupyter.org/
 [Jupyter Notebook]: https://jupyter.org/
