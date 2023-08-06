@@ -8,7 +8,7 @@ __author__      = "alvertogit"
 __copyright__   = "Copyright 2018-2023"
 
 import xml.etree.ElementTree as ET
-import psycopg2
+import psycopg
 import sys
 from decimal import Decimal
 
@@ -24,10 +24,10 @@ def connect():
     """
 
     try:
-        conn = psycopg2.connect(
+        conn = psycopg.connect(
         host='127.0.0.1', port=5432, database='codetest',
         user='codetest', password='codetest')
-    except psycopg2.Error as e:
+    except psycopg.Error as e:
         print('Unable to connect\n{0}').format(e)
         sys.exit(1)
     else:
@@ -70,7 +70,7 @@ if __name__ == '__main__':
         # insert product data into db
         try:
             cur.execute("INSERT INTO products_product (product_id, title, product_type, price, custom_label_0) VALUES (%s, %s, %s, %s, %s)",(product_id, title, product_type, price, custom_label_0))
-        except psycopg2.Error as e:
+        except psycopg.Error as e:
             print('Unable to execute insert into\n{0}').format(e)
             sys.exit(1)
 

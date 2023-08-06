@@ -17,7 +17,6 @@ This repository stores a code test compose of two exercises to demonstrate skill
   - [EXERCISE 2 ARCHITECTURE](#exercise-2-architecture)
   - [HOW TO RUN EXERCISE 2 **WITH DOCKER COMPOSE**](#how-to-run-exercise-2-with-docker-compose)
     - [TESTS](#tests)
-  - [HOW TO RUN EXERCISE 2 **WITHOUT DOCKER COMPOSE**](#how-to-run-exercise-2-without-docker-compose)
 - [CREDITS](#credits)
 
 ## DEPENDENCIES
@@ -421,80 +420,6 @@ Ran 6 tests in 0.056s
 OK
 Destroying test database for alias 'default'...
 
-```
-
-
-### HOW TO RUN EXERCISE 2 **WITHOUT DOCKER COMPOSE**
-
-Please note that this procedure requires having a running [PostgreSQL] database accesible locally through 5432 port on your system. [Django] is used directly without employing [NGINX] or [Gunicorn].
-
-First create environment **.env** file using **.env.example** file as template inside **mysite** folder. Make sure that *POSTGRES_HOST=postgres_db* line is commented in **.env** or assign the value to *POSTGRES_HOST=127.0.0.1*.
-
-As next step to be able to run Exercise 2 is mandatory to create in [PostgreSQL] an user called *'codetest'* with password *'codetest'* and a database *'codetest'*.
-
-The user and the database can be created with the following commands from shell.
-
-```bash
-~$ sudo -u postgres bash -c "psql -c \"CREATE USER codetest WITH PASSWORD 'codetest';\""
-~$ sudo -u postgres bash -c "psql -c \"CREATE DATABASE codetest WITH OWNER codetest;\""
-```
-
-Load .env file with activated virtual environment (codetest3).
-
-```bash
-(codetest3)~/codetest/exercise2$ export $(grep -v '^#' .env | xargs -d '\n')
-```
-
-The next step consists in executing the following commands to prepare the [Django]'s **products** app.
-
-```bash
-(codetest3)~/codetest/exercise2/mysite$ python3 manage.py migrate
-...
-(codetest3)~/codetest/exercise2/mysite$ python3 manage.py makemigrations products
-...
-(codetest3)~/codetest/exercise2/mysite$ python3 manage.py sqlmigrate products 0001
-BEGIN;
---
--- Create model Product
---
-CREATE TABLE "products_product" ("id" serial NOT NULL PRIMARY KEY, "product_id" varchar(10) NOT NULL, "title" varchar(100) NOT NULL, "product_type" varchar(100) NOT NULL, "price" numeric(6, 2) NOT NULL, "custom_label_0" numeric(6, 2) NOT NULL);
-COMMIT;
-```
-
-It is possible to use [Python] shell for checking [Django] configuration:
-
-```bash
-~/mysite$ python3 manage.py shell
-In [1]: from django.conf import settings
-In [2]: print(settings.BASE_DIR)
-/mysite
-```
-
-To import the database **codetest.sql** file containing the table **products_product** with all products to [PostgreSQL] it is necessary to execute:
-
-```bash
-(codetest3)~/codetest/exercise2/postgresql$ cp codetest.sql /tmp
-(codetest3)~/codetest/exercise2/postgresql$ sudo -u postgres psql codetest < '/tmp/codetest.sql'
-```
-
-The **codetest.sql** file was created after running the importer to insert data from **test.xml** file to [PostgreSQL] **products_product** table.
-
-```bash
-(codetest3)~/codetest/exercise2/postgresql$ python3 importer.py
-(codetest3)~/codetest/exercise2/postgresql$ pg_dump -U postgres codetest -h localhost > /tmp/codetest.sql
-(codetest3)~/codetest/exercise2/postgresql$ cp /tmp/codetest.sql codetest.sql
-```
-
-Now it is possible to launch the server with [Django]'s **products** app.
-
-```bash
-(codetest3)~/codetest/exercise2/mysite$ python3 manage.py runserver 8000
-```
-
-Now it is possible to open a web browser and paste the URL as described in the previous paragraph to check that the server is running fine.
-
-```bash
-http://127.0.0.1:8000/products/
 ```
 
 ## CREDITS
