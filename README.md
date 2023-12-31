@@ -25,7 +25,7 @@ The code has been tested using:
 
 * [Python] (3.10): an interpreted high-level programming language for general-purpose programming.
 * [Jupyter Lab] (4.0): a web-based interactive development environment for [Jupyter Notebooks], code and data.
-* [Django] (4.2): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
+* [Django] (5.0): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
 * [Gunicorn] (21.2): a [Python] [WSGI] HTTP Server for UNIX.
 * [NGINX] (1.25): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
 * [PostgreSQL] (16): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
@@ -39,8 +39,8 @@ Command to configure virtual environment with [venv]:
 ```bash
 ~/codetest$ python3 -m venv codetest3
 ~/codetest$ source codetest3/bin/activate
-(codetest3)~/codetest$ python3 -m pip install pip==23.2.1
-(codetest3)~/codetest$ python3 -m pip install setuptools==68.2.2
+(codetest3)~/codetest$ python3 -m pip install pip==23.3.2
+(codetest3)~/codetest$ python3 -m pip install setuptools==69.0.3
 (codetest3)~/codetest$ python3 -m pip install -r requirements.txt
 ```
 
