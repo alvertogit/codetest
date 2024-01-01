@@ -8,7 +8,7 @@ https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/
 """
 
 __author__      = "alvertogit"
-__copyright__   = "Copyright 2018-2023"
+__copyright__   = "Copyright 2018-2024"
 
 import os
 

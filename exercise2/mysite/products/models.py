@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 __author__      = "alvertogit"
-__copyright__   = "Copyright 2018-2023"
+__copyright__   = "Copyright 2018-2024"
 
 from django.db import models
 

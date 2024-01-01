@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 __author__      = "alvertogit"
-__copyright__   = "Copyright 2018-2023"
+__copyright__   = "Copyright 2018-2024"
 
 import os
 import sys
