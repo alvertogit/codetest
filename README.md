@@ -29,8 +29,8 @@ The code has been tested using:
 * [Gunicorn] (21.2): a [Python] [WSGI] HTTP Server for UNIX.
 * [NGINX] (1.25): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
 * [PostgreSQL] (16): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
-* [Docker] (25.0): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
-* [Docker Compose] (2.24): a tool for defining and running multi-container [Docker] applications.
+* [Docker] (26.0): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
+* [Docker Compose] (2.25): a tool for defining and running multi-container [Docker] applications.
 
 Virtual environment (<env_name>=**codetest3**) can be generated with **requirements.txt** file found in codetest main folder.
 
@@ -40,7 +40,7 @@ Command to configure virtual environment with [venv]:
 ~/codetest$ python3 -m venv codetest3
 ~/codetest$ source codetest3/bin/activate
 (codetest3)~/codetest$ python3 -m pip install pip==24.0
-(codetest3)~/codetest$ python3 -m pip install setuptools==69.1.1
+(codetest3)~/codetest$ python3 -m pip install setuptools==69.2.0
 (codetest3)~/codetest$ python3 -m pip install -r requirements.txt
 ```
 
