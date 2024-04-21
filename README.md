@@ -23,25 +23,25 @@ This repository stores a code test compose of two exercises to demonstrate skill
 
 The code has been tested using:
 
-* [Python] (3.10): an interpreted high-level programming language for general-purpose programming.
-* [Jupyter Lab] (4.1): a web-based interactive development environment for [Jupyter Notebooks], code and data.
-* [Django] (5.0): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
-* [Gunicorn] (21.2): a [Python] [WSGI] HTTP Server for UNIX.
-* [NGINX] (1.25): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
-* [PostgreSQL] (16): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
-* [Docker] (26.0): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
-* [Docker Compose] (2.25): a tool for defining and running multi-container [Docker] applications.
+- [Python] (3.10): an interpreted high-level programming language for general-purpose programming.
+- [Jupyter Lab] (4.1): a web-based interactive development environment for [Jupyter Notebooks], code and data.
+- [Django] (5.0): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
+- [Gunicorn] (22.0): a [Python] [WSGI] HTTP Server for UNIX.
+- [NGINX] (1.25): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
+- [PostgreSQL] (16): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
+- [Docker] (26.0): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
+- [Docker Compose] (2.26): a tool for defining and running multi-container [Docker] applications.
 
-Virtual environment (<env_name>=**codetest3**) can be generated with **requirements.txt** file found in codetest main folder.
+Virtual environment (<env_name>=**.venv**) can be generated with **requirements.txt** file found in codetest main folder.
 
 Command to configure virtual environment with [venv]:
 
 ```bash
-~/codetest$ python3 -m venv codetest3
-~/codetest$ source codetest3/bin/activate
-(codetest3)~/codetest$ python3 -m pip install pip==24.0
-(codetest3)~/codetest$ python3 -m pip install setuptools==69.2.0
-(codetest3)~/codetest$ python3 -m pip install -r requirements.txt
+~/codetest$ python3 -m venv .venv
+~/codetest$ source .venv/bin/activate
+(.venv)~/codetest$ python3 -m pip install pip==24.0
+(.venv)~/codetest$ python3 -m pip install setuptools==69.5.1
+(.venv)~/codetest$ python3 -m pip install -r requirements.txt
 ```
 
 ## CODE TEST CONTENT
@@ -80,11 +80,11 @@ print(translate(123456789))
 
 The **exercise1** folder contains three files:
 
-* **function.py**: It contents translate functions code for Exercise 1 including one solution with regular expression.
+- **function.py**: It contents translate functions code for Exercise 1 including one solution with regular expression.
 
-* **main.py**: It is used to test translate functions.
+- **main.py**: It is used to test translate functions.
 
-* **Exercise1.ipynb**: [Jupyter Notebook] to test translate functions.
+- **Exercise1.ipynb**: [Jupyter Notebook] to test translate functions.
 
 ```bash
 exercise1
@@ -99,13 +99,13 @@ exercise1
 The way to run Exercise 1 is simple. Just go to **exercise1** folder and execute:
 
 ```bash
-(codetest3)~/codetest/exercise1$ python3 main.py
+(.venv)~/codetest/exercise1$ python3 main.py
 ```
 
 A good way to play with the **translate** and **translate_regex** functions is through a [Jupyter Lab]. One notebook is stored in the same **exercise1** folder, to run it use the command shown below:
 
 ```bash
-(codetest3)~/codetest/exercise1$ jupyter lab Exercise1.ipynb
+(.venv)~/codetest/exercise1$ jupyter lab Exercise1.ipynb
 ```
 
 ![Jupyter notebook translate function](exercise1/docs/jupyter_notebook_translate_function.png)
@@ -171,23 +171,23 @@ exercise2
     └── test.xml
 ```
 
-* **docker-compose.yml**: creates the [Django] and [PostgreSQL] [Docker] containers in which the applications shall run.
+- **docker-compose.yml**: creates the [Django] and [PostgreSQL] [Docker] containers in which the applications shall run.
 
-* **docs**: It stores Exercise 2 documentation.
+- **docs**: It stores Exercise 2 documentation.
 
-* **mysite**: It stores [Django]'s **products** app code.
+- **mysite**: It stores [Django]'s **products** app code.
 
-* **nginx**: It stores [NGINX]'s configuration.
+- **nginx**: It stores [NGINX]'s configuration.
 
-* **postgresql**: It stores the **test.xml** with data to be inserted into [PostgreSQL] and the **importer** app to do this process.
+- **postgresql**: It stores the **test.xml** with data to be inserted into [PostgreSQL] and the **importer** app to do this process.
 
 ### EXERCISE 2 ARCHITECTURE
 
 The architecture created with [Docker Compose] uses three different [Docker] containers for:
 
-* [NGINX].
-* [Django] and [Gunicorn].
-* [PostgreSQL].
+- [NGINX].
+- [Django] and [Gunicorn].
+- [PostgreSQL].
 
 The following diagram illustrates the architecture in blocks:
 
@@ -259,7 +259,7 @@ Vary: Accept
 
 The description of the URLs that are above:
 
-* "price" URL: Gets 20 products ordered by price.
+- "price" URL: Gets 20 products ordered by price.
 
 ```bash
 HTTP 200 OK
@@ -295,7 +295,7 @@ Vary: Accept
 ]
 ```
 
-* "discount" URL: Gets 20 products ordered by discount (price - custom_label_0).
+- "discount" URL: Gets 20 products ordered by discount (price - custom_label_0).
 
 ```bash
 HTTP 200 OK
@@ -331,7 +331,7 @@ Vary: Accept
 ]
 ```
 
-* "mostdiscounted" URL: Gets the most discounted 20 products.
+- "mostdiscounted" URL: Gets the most discounted 20 products.
 
 ```bash
 HTTP 200 OK
@@ -367,7 +367,7 @@ Vary: Accept
 ]
 ```
 
-* "typecomedy" URL: Gets all products under “Comedy” product type.
+- "typecomedy" URL: Gets all products under “Comedy” product type.
 
 ```bash
 HTTP 200 OK
@@ -407,7 +407,7 @@ Vary: Accept
 
 To run tests execute inside web container the command to launch tests:
 
-```
+```bash
 ~/codetest/exercise2$ docker compose exec web bash
 root@8800eecc88:/mysite# python manage.py test
 Found 6 test(s).
