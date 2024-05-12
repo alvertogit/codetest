@@ -24,13 +24,13 @@ This repository stores a code test compose of two exercises to demonstrate skill
 The code has been tested using:
 
 - [Python] (3.12): an interpreted high-level programming language for general-purpose programming.
-- [Jupyter Lab] (4.1): a web-based interactive development environment for [Jupyter Notebooks], code and data.
+- [Jupyter Lab] (4.2): a web-based interactive development environment for [Jupyter Notebooks], code and data.
 - [Django] (5.0): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
 - [Gunicorn] (22.0): a [Python] [WSGI] HTTP Server for UNIX.
 - [NGINX] (1.25): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
 - [PostgreSQL] (16): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
 - [Docker] (26.1): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
-- [Docker Compose] (2.26): a tool for defining and running multi-container [Docker] applications.
+- [Docker Compose] (2.27): a tool for defining and running multi-container [Docker] applications.
 
 Virtual environment (<env_name>=**.venv**) can be generated with **requirements.txt** file found in codetest main folder.
 
