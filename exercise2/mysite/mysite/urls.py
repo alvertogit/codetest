@@ -28,6 +28,8 @@ urlpatterns = [
     re_path("products/", include("products.urls")),
     re_path(
         "favicon.ico",
-        RedirectView.as_view(url=settings.STATIC_URL + "rest_framework/docs/img/favicon.ico"),
+        RedirectView.as_view(
+            url=settings.STATIC_URL + "rest_framework/docs/img/favicon.ico"
+        ),
     ),
 ]
