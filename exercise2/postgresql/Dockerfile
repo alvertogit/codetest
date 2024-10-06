@@ -1,2 +1,2 @@
-FROM postgres:16-alpine
+FROM postgres:17-alpine
  ADD ./codetest.sql /docker-entrypoint-initdb.d/

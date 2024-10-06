@@ -28,7 +28,7 @@ The code has been tested using:
 - [Django] (5.1): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
 - [Gunicorn] (23.0): a [Python] [WSGI] HTTP Server for UNIX.
 - [NGINX] (1.27): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
-- [PostgreSQL] (16): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
+- [PostgreSQL] (17): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
 - [Docker] (27.3): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
 - [Docker Compose] (2.29): a tool for defining and running multi-container [Docker] applications.
 
