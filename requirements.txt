@@ -6,4 +6,4 @@ jupyterlab==4.2.5
 pre-commit==4.0.1
 psycopg[binary]==3.2.3
 requests==2.32.3
-ruff==0.6.9
+ruff==0.7.0
