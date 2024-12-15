@@ -3,6 +3,8 @@ services:
     build: postgresql
     env_file:
       - mysite/.env
+    ports:
+      - 5432:5432
     networks:
       - postgres_db_network
 
