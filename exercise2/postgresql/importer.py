@@ -5,7 +5,7 @@ importer.py: It imports data from test.xml file to postgresql.
 """
 
 __author__ = "alvertogit"
-__copyright__ = "Copyright 2018-2024"
+__copyright__ = "Copyright 2018-2025"
 
 
 import sys

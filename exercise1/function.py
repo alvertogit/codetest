@@ -5,7 +5,7 @@ function.py: It contents translate functions solutions to Exercise 1.
 """
 
 __author__ = "alvertogit"
-__copyright__ = "Copyright 2018-2024"
+__copyright__ = "Copyright 2018-2025"
 
 
 import re

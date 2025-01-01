@@ -428,7 +428,7 @@ Destroying test database for alias 'default'...
 ## CREDITS
 
 author: alvertogit
-copyright: 2018-2024
+copyright: 2018-2025
 
 [Python]: https://www.python.org/
 [Django]: https://www.djangoproject.com/
