@@ -1,5 +1,5 @@
 FROM python:3.12-slim-bookworm
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONUNBUFFERED=1
 RUN apt-get update \
     && apt-get install -y make \
     && apt-get clean \
@@ -8,9 +8,9 @@ RUN mkdir -p /mysite
 COPY . /mysite
 WORKDIR /mysite
 RUN python3 -m venv .
-RUN python3 -m pip install pip==25.1
-RUN python3 -m pip install setuptools==79.0.1
+RUN python3 -m pip install pip==25.1.1
+RUN python3 -m pip install setuptools==80.4.0
 RUN python3 -m pip install --no-cache-dir -r requirements.txt
 RUN python3 manage.py collectstatic --no-input
 EXPOSE 8000
-CMD python3 manage.py migrate ; gunicorn --bind :8000 mysite.wsgi:application
+CMD ["sh", "-c", "python3 manage.py migrate ; gunicorn --bind :8000 mysite.wsgi:application"]
