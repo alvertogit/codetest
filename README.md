@@ -40,7 +40,7 @@ Command to configure virtual environment with [venv]:
 ~/codetest$ python3 -m venv .venv
 ~/codetest$ source .venv/bin/activate
 (.venv)~/codetest$ python3 -m pip install pip==25.1.1
-(.venv)~/codetest$ python3 -m pip install setuptools==80.4.0
+(.venv)~/codetest$ python3 -m pip install setuptools==80.7.1
 (.venv)~/codetest$ python3 -m pip install -r requirements.txt
 (.venv)~/codetest$ pre-commit install
 ```
