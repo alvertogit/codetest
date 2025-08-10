@@ -1,9 +1,9 @@
-Django==5.2.4
+Django==5.2.5
 django-filter==25.1
-djangorestframework==3.16.0
+djangorestframework==3.16.1
 gunicorn==23.0.0
-jupyterlab==4.4.4
+jupyterlab==4.4.5
 pre-commit==4.2.0
 psycopg[binary]==3.2.9
 requests==2.32.4
-ruff==0.12.3
+ruff==0.12.8
