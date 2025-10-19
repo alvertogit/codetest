@@ -4,6 +4,6 @@ djangorestframework==3.16.1
 gunicorn==23.0.0
 jupyterlab==4.4.9
 pre-commit==4.3.0
-psycopg[binary]==3.2.10
+psycopg[binary]==3.2.11
 requests==2.32.5
-ruff==0.14.0
+ruff==0.14.1
