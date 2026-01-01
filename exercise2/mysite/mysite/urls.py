@@ -15,7 +15,7 @@ Including another URLconf
 """
 
 __author__ = "alvertogit"
-__copyright__ = "Copyright 2018-2025"
+__copyright__ = "Copyright 2018-2026"
 
 
 from django.conf import settings
