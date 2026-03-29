@@ -26,7 +26,7 @@ The code has been tested using:
 - [Python] (3.12): an interpreted high-level programming language for general-purpose programming.
 - [Jupyter Lab] (4.5): a web-based interactive development environment for [Jupyter Notebooks], code and data.
 - [Django] (6.0): a high-level [Python] Web framework that encourages rapid development and clean, pragmatic design.
-- [Gunicorn] (25.1): a [Python] [WSGI] HTTP Server for UNIX.
+- [Gunicorn] (25.3): a [Python] [WSGI] HTTP Server for UNIX.
 - [NGINX] (1.29): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
 - [PostgreSQL] (18.3): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
 - [Docker] (28.5): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
