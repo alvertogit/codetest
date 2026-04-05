@@ -3,4 +3,4 @@ django-filter==25.2
 djangorestframework==3.17.1
 gunicorn==25.3.0
 psycopg[binary]==3.3.3
-requests==2.33.0
+requests==2.33.1
