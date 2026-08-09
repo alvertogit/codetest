@@ -8,8 +8,8 @@ RUN mkdir -p /mysite
 COPY . /mysite
 WORKDIR /mysite
 RUN python3 -m venv .
-RUN python3 -m pip install pip==26.1.2
-RUN python3 -m pip install setuptools==83.0.0
+RUN python3 -m pip install pip==26.2.1
+RUN python3 -m pip install setuptools==84.0.0
 RUN python3 -m pip install --no-cache-dir -r requirements.txt
 RUN python3 manage.py collectstatic --no-input
 EXPOSE 8000
