@@ -2,8 +2,8 @@ Django==6.1.2
 django-filter==26.2
 djangorestframework==3.18.3
 gunicorn==26.2.0
-jupyterlab==4.6.4
+jupyterlab==4.6.5
 pre-commit==4.7.0
 psycopg[binary]==3.3.6
 requests==2.34.2
-ruff==0.17.2
+ruff==0.17.3
