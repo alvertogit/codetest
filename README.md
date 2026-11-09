@@ -30,7 +30,7 @@ The code has been tested using:
 - [NGINX] (1.31): a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
 - [PostgreSQL] (18.6): an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.
 - [Docker] (29.9): an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
-- [Docker Compose] (5.6): a tool for defining and running multi-container [Docker] applications.
+- [Docker Compose] (5.7): a tool for defining and running multi-container [Docker] applications.
 
 Virtual environment (<env_name>=**.venv**) can be generated with **requirements.txt** file found in codetest main folder.
 
@@ -39,7 +39,7 @@ Command to configure virtual environment with [venv]:
 ```bash
 ~/codetest$ python3 -m venv .venv
 ~/codetest$ source .venv/bin/activate
-(.venv)~/codetest$ python3 -m pip install pip==26.2.2
+(.venv)~/codetest$ python3 -m pip install pip==26.3
 (.venv)~/codetest$ python3 -m pip install setuptools==84.2.1
 (.venv)~/codetest$ python3 -m pip install -r requirements.txt
 (.venv)~/codetest$ pre-commit install
